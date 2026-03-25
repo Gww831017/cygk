@@ -4,247 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>黔江创友骨科医院 - 创骨科典范，友一方百姓</title>
+  <meta name="description" content="渝东南首家国家二级骨科专科医院，断肢再植存活率99.8%，小儿骨科、关节置换、机器人手术权威专家团队。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background: #fff; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    .banner { width: 100%; height: 500px; background: url('banner.jpg') center/cover no-repeat; margin-bottom: 40px; position: relative; }
-    .banner-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 30px; }
-    .banner-overlay h1 { font-size: 36px; margin-bottom: 10px; }
-    .section { margin-bottom: 60px; }
-    .section-title { font-size: 28px; margin-bottom: 30px; text-align: center; color: #2c5c3e; }
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 30px; margin-bottom: 30px; }
-    .card { background: #f8f9fa; border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 300px; object-fit: cover; }
-    .card-content { padding: 20px; }
-    .card h3 { font-size: 20px; margin-bottom: 10px; color: #2c5c3e; }
-    .stats { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; background: #f8f9fa; border-radius: 8px; padding: 20px 0; }
-    .stat-item { padding: 20px; min-width: 150px; }
-    .stat-number { font-size: 36px; font-weight: bold; color: #2c5c3e; }
-    .qualification-list { columns: 2; }
-    .qualification-list li { margin-bottom: 10px; list-style: none; padding-left: 30px; position: relative; font-size: 16px; line-height: 1.8; }
-    .qualification-list li:before { content: "✅"; position: absolute; left: 0; }
-    .expert-avatar { text-align: center; margin-bottom: 30px; }
-    .expert-avatar img { max-width: 300px; border-radius: 50%; border: 5px solid #f0f5f2; }
-    .expert-avatar h3 { margin-top: 15px; font-size: 22px; }
-    .expert-table { width: 100%; border-collapse: collapse; }
-    .expert-table td, .expert-table th { padding: 12px 15px; border-bottom: 1px solid #ddd; }
-    .culture-box { background: #f0f5f2; padding: 30px; border-radius: 8px; line-height: 2; }
-    .footer { text-align: center; padding: 40px 20px; background: #2c5c3e; color: white; }
-    .footer p { margin-bottom: 8px; }
-    @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; }
-      .qualification-list { columns: 1; }
-      .banner { height: 300px; }
-      .banner-overlay h1 { font-size: 24px; }
-      .stats { flex-direction: column; }
-    }
+    :root{--primary:#0d6e6e;--primary-dark:#094d4d;--primary-light:#1a9494;--accent:#e8a838;--bg:#f7fafc;--white:#ffffff;--text:#2d3748;--text-light:#4a5568;--text-lighter:#718096;--border:#e2e8f0;--shadow:0 4px 24px rgba(13,110,110,0.1);--shadow-lg:0 12px 40px rgba(13,110,110,0.15)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.8;color:var(--text);background:var(--white)}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--border);transition:box-shadow .3s}
+    .navbar.scrolled{box-shadow:var(--shadow)}
+    .nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:70px}
+    .nav-logo{display:flex;align-items:center;gap:10px;color:var(--primary);font-weight:700;font-size:18px;text-decoration:none}
+    .nav-logo img{height:44px}
+    .nav-links{display:flex;list-style:none;gap:4px;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--text-light);padding:8px 16px;border-radius:8px;font-size:15px;font-weight:500;transition:all .2s}
+    .nav-links a:hover{background:var(--bg);color:var(--primary)}
+    .nav-emergency{background:linear-gradient(135deg,#e53e3e,#c53030)!important;color:#fff!important;border-radius:50px!important;font-weight:600!important;box-shadow:0 4px 12px rgba(229,62,62,0.3)!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .hamburger span{width:24px;height:2px;background:var(--primary);border-radius:2px}
+    @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;position:fixed;top:70px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;gap:4px;box-shadow:var(--shadow);border-radius:0 0 16px 16px}.nav-links.open{display:flex}.nav-links a{width:100%;text-align:center}}
+    .hero{position:relative;height:100vh;min-height:600px;background:url('banner.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,77,77,0.75),rgba(13,110,110,0.5))}
+    .hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:0 24px;max-width:800px}
+    .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:6px 20px;font-size:14px;margin-bottom:24px;backdrop-filter:blur(4px)}
+    .hero h1{font-size:56px;font-weight:700;line-height:1.2;margin-bottom:16px;letter-spacing:2px}
+    .hero .sub{font-size:22px;opacity:0.9;margin-bottom:8px}
+    .hero .slogan{font-size:28px;font-weight:300;opacity:0.85;margin-bottom:40px;letter-spacing:4px}
+    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#d4922a);color:#fff;padding:14px 36px;border-radius:50px;font-size:16px;font-weight:600;text-decoration:none;box-shadow:0 6px 20px rgba(232,168,56,0.4);transition:all .3s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,168,56,0.5)}
+    .btn-outline{border:2px solid rgba(255,255,255,0.6);color:#fff;padding:12px 36px;border-radius:50px;font-size:16px;font-weight:500;text-decoration:none;backdrop-filter:blur(4px);transition:all .3s}
+    .btn-outline:hover{background:rgba(255,255,255,0.15);border-color:#fff}
+    @media(max-width:768px){.hero h1{font-size:36px}.hero .sub{font-size:16px}.hero .slogan{font-size:20px}}
+    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:1;color:rgba(255,255,255,0.6);font-size:13px;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+    .stats-bar{background:linear-gradient(135deg,var(--primary-dark),var(--primary));padding:40px 0}
+    .stats-grid{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+    .stat-item{text-align:center;color:#fff;min-width:140px}
+    .stat-num{font-size:48px;font-weight:700;line-height:1;margin-bottom:6px}
+    .stat-label{font-size:15px;opacity:0.8}
+    .section{padding:80px 0}
+    .container{max-width:1200px;margin:0 auto;padding:0 32px}
+    .section-tag{display:inline-block;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:4px 16px;border-radius:50px;font-size:13px;font-weight:500;margin-bottom:16px}
+    .section-title{font-size:36px;font-weight:700;color:var(--text);margin-bottom:16px}
+    .section-desc{font-size:17px;color:var(--text-light);max-width:600px;margin-bottom:50px}
+    .text-center{text-align:center}
+    .text-center .section-desc{margin:0 auto 50px}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .intro-img-wrap{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg)}
+    .intro-img-wrap img{width:100%;height:400px;object-fit:cover;display:block}
+    .intro-text h2{font-size:30px;font-weight:700;margin-bottom:16px;color:var(--text)}
+    .intro-text p{color:var(--text-light);margin-bottom:16px;font-size:16px}
+    .intro-highlight{background:linear-gradient(135deg,#e6f5f5,#d0efef);border-left:4px solid var(--primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0}
+    .intro-highlight p{margin:0;font-size:18px;font-weight:500;color:var(--primary-dark)}
+    .intro-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .intro-tag{background:var(--white);border:1px solid var(--border);padding:6px 14px;border-radius:6px;font-size:14px;color:var(--text-light)}
+    @media(max-width:768px){.intro-grid{grid-template-columns:1fr;gap:30px}.intro-img-wrap img{height:260px}}
+    .qual-section{background:var(--bg)}
+    .qual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .qual-item{background:var(--white);border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:all .2s}
+    .qual-item:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .qual-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+    .qual-text{font-size:15px;font-weight:500;color:var(--text)}
+    @media(max-width:768px){.qual-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.qual-grid{grid-template-columns:1fr}}
+    .tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .tech-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:all .3s;border:1px solid var(--border)}
+    .tech-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .tech-card img{width:100%;height:200px;object-fit:cover}
+    .tech-body{padding:24px}
+    .tech-emoji{font-size:32px;margin-bottom:12px}
+    .tech-body h3{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--text)}
+    .tech-body p{font-size:14px;color:var(--text-light);line-height:1.7}
+    @media(max-width:900px){.tech-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.tech-grid{grid-template-columns:1fr}}
+    .expert-section{background:linear-gradient(135deg,#f0f9f9,#e0f2f2)}
+    .expert-lead{text-align:center;max-width:700px;margin:0 auto 50px}
+    .expert-avatar-wrap{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 16px;border:4px solid var(--white);box-shadow:var(--shadow);background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;font-weight:700}
+    .expert-lead h3{font-size:24px;font-weight:700;color:var(--text)}
+    .expert-lead .title{color:var(--primary);font-weight:500;margin-bottom:10px}
+    .expert-lead p{color:var(--text-light);font-size:15px}
+    .expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .expert-card{background:var(--white);border-radius:12px;padding:20px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:all .2s}
+    .expert-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .expert-avatar-sm{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700;flex-shrink:0}
+    .expert-info h4{font-size:15px;font-weight:700;color:var(--text)}
+    .expert-info .role{font-size:13px;color:var(--primary);margin-bottom:2px}
+    .expert-info .skill{font-size:12px;color:var(--text-lighter)}
+    @media(max-width:900px){.expert-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.expert-grid{grid-template-columns:1fr}}
+    .culture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .culture-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:var(--shadow);border:1px solid var(--border)}
+    .culture-card h3{font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .culture-card p{font-size:15px;color:var(--text-light);line-height:1.9}
+    .culture-card.accent{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff}
+    .culture-card.accent h3{color:#fff}
+    .culture-card.accent p{color:rgba(255,255,255,0.85)}
+    @media(max-width:768px){.culture-grid{grid-template-columns:1fr}}
+    .contact-section{background:var(--primary-dark);color:#fff}
+    .contact-section .section-tag{background:rgba(255,255,255,0.15)}
+    .contact-section .section-title{color:#fff}
+    .contact-section .section-desc{color:rgba(255,255,255,0.7)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    .contact-info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
+    .contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .contact-info-item h4{font-size:15px;font-weight:600;margin-bottom:4px}
+    .contact-info-item p{font-size:14px;opacity:0.8}
+    .contact-cta{background:linear-gradient(135deg,var(--accent),#d4922a);border-radius:16px;padding:32px;text-align:center}
+    .contact-cta h3{font-size:22px;margin-bottom:8px}
+    .contact-cta p{font-size:15px;opacity:0.9;margin-bottom:20px}
+    .contact-cta .phone{font-size:28px;font-weight:700;letter-spacing:2px;color:#fff;text-decoration:none}
+    @media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+    .footer{background:#072e2e;color:rgba(255,255,255,0.6);text-align:center;padding:32px;font-size:14px}
+    .footer p{margin-bottom:6px}
+    .footer .hospital{font-size:16px;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:8px}
   </style>
 </head>
 <body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-wrap">
+      <a href="#" class="nav-logo"><img src="logo.png" alt="创友骨科" onerror="this.style.display='none'"><span>黔江创友骨科医院</span></a>
+      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+      <ul class="nav-links">
+        <li><a href="#intro">医院概况</a></li>
+        <li><a href="#tech">特色技术</a></li>
+        <li><a href="#experts">专家团队</a></li>
+        <li><a href="#culture">医院文化</a></li>
+        <li><a href="#contact" class="nav-emergency">📞 立即咨询</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- 头部横幅 -->
-  <div class="banner">
-    <div class="banner-overlay">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🏥 渝东南首家国家二级骨科专科医院</div>
       <h1>黔江创友骨科医院</h1>
-      <p>创骨科典范 · 友一方百姓</p>
+      <p class="sub">十五年专注骨科 · 服务渝东南百姓</p>
+      <p class="slogan">创骨科典范 · 友一方百姓</p>
+      <div class="hero-btns">
+        <a href="#tech" class="btn-primary">了解特色技术</a>
+        <a href="#experts" class="btn-outline">专家团队</a>
+      </div>
+    </div>
+    <div class="scroll-hint">↓ 向下滚动</div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item"><div class="stat-num">2011</div><div class="stat-label">建院年份</div></div>
+      <div class="stat-item"><div class="stat-num">101</div><div class="stat-label">开放床位</div></div>
+      <div class="stat-item"><div class="stat-num">167</div><div class="stat-label">医务人员</div></div>
+      <div class="stat-item"><div class="stat-num">99.8%</div><div class="stat-label">断肢再植存活率</div></div>
+      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">成功手术案例</div></div>
     </div>
   </div>
 
-  <div class="container">
-
-    <!-- 医院概况 -->
-    <section class="section">
-      <h2 class="section-title">医院概况</h2>
-      <div class="grid-2">
-        <div>
-          <p><strong>黔江创友骨科医院</strong>成立于2011年6月，是经重庆市卫生健康委员会批准成立的<strong>二级骨科专科医院</strong>，也是渝东南地区规模最大、技术实力最强的骨科专科医院。</p>
-          <br>
-          <p>医院位于重庆市黔江区舟白街道武陵大道北段98号，交通便利，环境优雅。现有职工167人，其中少数民族职工114人，占比68.26%。</p>
-          <br>
-          <p><strong>院训：<em>责任 · 厚德 · 精业</em></strong></p>
-        </div>
-        <div>
-          <img src="hospital.jpg" alt="黔江创友骨科医院" style="width:100%; border-radius:8px; height: 100%; object-fit: cover;">
-        </div>
-      </div>
-
-      <div class="stats" style="margin-top:40px;">
-        <div class="stat-item">
-          <div class="stat-number">2011</div>
-          <div>建院年份</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">101</div>
-          <div>开放床位</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">167</div>
-          <div>医务人员</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">99.8%</div>
-          <div>断肢再植存活率</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 资质定点 -->
-    <section class="section">
-      <h2 class="section-title">资质定点</h2>
-      <ul class="qualification-list">
-        <li>重庆市120急救网络医院</li>
-        <li>城乡居民医疗保险定点</li>
-        <li>城镇职工医疗保险定点</li>
-        <li>工伤保险定点</li>
-        <li>商业保险定点</li>
-        <li>国家残疾儿童康复救助定点</li>
-      </ul>
-    </section>
-
-    <!-- 特色技术 -->
-    <section class="section">
-      <h2 class="section-title">特色技术</h2>
-
-      <div class="grid-2">
-        <div class="card">
-          <img src="tech-pediatric.jpg" alt="小儿矫形">
-          <div class="card-content">
-            <h3>👶 小儿矫形</h3>
-            <p>专业的小儿骨科矫形团队，擅长各类先天性及后天性骨关节畸形的手术治疗，帮助众多患儿恢复正常运动功能。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="tech-replant.jpg" alt="断肢再植">
-          <div class="card-content">
-            <h3>🔬 断肢（指/趾）再植</h3>
-            <p>运用显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="tech-joint.jpg" alt="关节置换">
-          <div class="card-content">
-            <h3>🦾 髋膝关节置换</h3>
-            <p>成熟的关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="tech-robot.jpg" alt="机器人手术">
-          <div class="card-content">
-            <h3>🤖 机器人辅助手术</h3>
-            <p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="tech-rehab.jpg" alt="颈肩腰腿痛">
-          <div class="card-content">
-            <h3>💆 慢性颈肩腰腿痛</h3>
-            <p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，解决长期疼痛困扰。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="tech-rehab.JPG" alt="康复医学">
-          <div class="card-content">
-            <h3>💪 康复医学</h3>
-            <p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p>
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-img-wrap"><img src="banner.jpg" alt="黔江创友骨科医院"></div>
+        <div class="intro-text">
+          <span class="section-tag">医院概况</span>
+          <h2>渝东南规模最大的骨科专科医院</h2>
+          <p>黔江创友骨科医院成立于2011年6月，是经重庆市卫生健康委员会批准成立的二级骨科专科医院。十五年深耕骨科，现已发展成为渝东南地区规模最大、技术实力最强的骨科专科医院。</p>
+          <p>医院位于重庆市黔江区舟白街道武陵大道北段98号，环境优雅，交通便利。现有职工167人，其中少数民族职工114人（占比68.26%），是一支充满活力的专业医疗团队。</p>
+          <div class="intro-highlight"><p>🏆 断肢（指/趾）再植存活率达 99.8%</p></div>
+          <div class="intro-tags">
+            <span class="intro-tag">🏥 二级专科医院</span>
+            <span class="intro-tag">🧬 医保定点</span>
+            <span class="intro-tag">🚑 120急救网络</span>
+            <span class="intro-tag">👶 残疾儿童救助定点</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 专家团队 -->
-    <section class="section">
-      <h2 class="section-title">专家团队</h2>
+  <section class="section qual-section" id="qual">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">资质认证</span>
+        <h2 class="section-title">多定点资质，看病更方便</h2>
+        <p class="section-desc">持医保卡即可直接就医，覆盖城乡居民、职工、工伤及商业保险</p>
+      </div>
+      <div class="qual-grid">
+        <div class="qual-item"><div class="qual-icon">🚑</div><div class="qual-text">重庆市120急救网络医院</div></div>
+        <div class="qual-item"><div class="qual-icon">🏥</div><div class="qual-text">城乡居民医疗保险定点</div></div>
+        <div class="qual-item"><div class="qual-icon">👨⚕️</div><div class="qual-text">城镇职工医疗保险定点</div></div>
+        <div class="qual-item"><div class="qual-icon">🛡️</div><div class="qual-text">工伤保险定点医院</div></div>
+        <div class="qual-item"><div class="qual-icon">💳</div><div class="qual-text">商业保险定点医院</div></div>
+        <div class="qual-item"><div class="qual-icon">👶</div><div class="qual-text">残疾儿童康复救助定点</div></div>
+      </div>
+    </div>
+  </section>
 
-      <div class="expert-avatar">
-        <img src="expert-yu.jpg" alt="余晓辉 院长">
+  <section class="section" id="tech">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">核心技术</span>
+        <h2 class="section-title">六大特色专科，全方位骨科服务</h2>
+        <p class="section-desc">技术立院，十五年积累，为患者提供精准、安全、高效的医疗服务</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card"><img src="tech-pediatric.jpg" alt="小儿矫形" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">👶</div><h3>小儿骨科矫形</h3><p>专业小儿骨科团队，擅长各类先天性及后天性骨关节畸形手术，帮助众多患儿恢复正常运动功能。</p></div></div>
+        <div class="tech-card"><img src="tech-replant.jpg" alt="断肢再植" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🔬</div><h3>断肢（指/趾）再植</h3><p>运用先进显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p></div></div>
+        <div class="tech-card"><img src="tech-joint.jpg" alt="关节置换" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🦾</div><h3>髋膝关节置换</h3><p>成熟关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高，告别关节疼痛。</p></div></div>
+        <div class="tech-card"><img src="tech-robot.jpg" alt="机器人手术" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🤖</div><h3>机器人辅助手术</h3><p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p></div></div>
+        <div class="tech-card"><img src="tech-rehab.JPG" alt="颈肩腰腿痛" onerror="this.src='tech-rehab.jpg'"><div class="tech-body"><div class="tech-emoji">💆</div><h3>慢性颈肩腰腿痛</h3><p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，有效解决长期疼痛困扰。</p></div></div>
+        <div class="tech-card"><img src="tech-rehab.JPG" alt="康复医学" onerror="this.src='tech-rehab.jpg'"><div class="tech-body"><div class="tech-emoji">💪</div><h3>康复医学</h3><p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section expert-section" id="experts">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">专家团队</span>
+        <h2 class="section-title">资深专家团队，护佑患者健康</h2>
+        <p class="section-desc">30余年临床经验，专注骨科，守护渝东南百姓</p>
+      </div>
+      <div class="expert-lead">
+        <div class="expert-avatar-wrap" id="yuAvatar">余</div>
         <h3>余晓辉</h3>
-        <p>首席骨科专家 · 院长 · 副主任医师</p>
-        <p style="max-width: 600px; margin: 10px auto;">从事骨科临床工作三十余年，在骨科常见病、多发病及疑难病症的诊治方面积累了丰富经验。擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形。</p>
+        <p class="title">首席骨科专家 · 院长 · 副主任医师</p>
+        <p>从事骨科临床工作三十余年，擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形等，主持开展多项骨科新技术项目。</p>
       </div>
-
-      <table class="expert-table">
-        <tbody>
-          <tr>
-            <td><strong>何鸿</strong></td>
-            <td>中医科主任 · 副主任医师</td>
-            <td>中医骨伤、康复理疗</td>
-          </tr>
-          <tr>
-            <td><strong>王耀</strong></td>
-            <td>关节外科主任 · 主治医师</td>
-            <td>关节疾病诊治</td>
-          </tr>
-          <tr>
-            <td><strong>任建国</strong></td>
-            <td>院长助理 · 手足外科主任</td>
-            <td>手足外科、显微外科</td>
-          </tr>
-          <tr>
-            <td><strong>兰晓东</strong></td>
-            <td>院长助理 · 康复医学科主任</td>
-            <td>康复医学</td>
-          </tr>
-          <tr>
-            <td><strong>任江林</strong></td>
-            <td>关节外科副主任</td>
-            <td>关节外科</td>
-          </tr>
-          <tr>
-            <td><strong>胡华</strong></td>
-            <td>中医科副主任</td>
-            <td>中医骨伤</td>
-          </tr>
-          <tr>
-            <td><strong>罗晓琴</strong></td>
-            <td>康复医学科副主任</td>
-            <td>康复治疗</td>
-          </tr>
-          <tr>
-            <td><strong>湛华阳</strong></td>
-            <td>门诊部主任</td>
-            <td>门诊综合诊疗</td>
-          </tr>
-          <tr>
-            <td><strong>向浩</strong></td>
-            <td>内科主任</td>
-            <td>内科基础疾病管理</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div style="margin-top:30px;">
-        <img src="team.JPG" alt="专家团队合影" style="width:100%; border-radius:8px;">
+      <div class="expert-grid">
+        <div class="expert-card"><div class="expert-avatar-sm">何</div><div class="expert-info"><h4>何鸿</h4><div class="role">中医科主任 · 副主任医师</div><div class="skill">中医骨伤 · 康复理疗</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">王</div><div class="expert-info"><h4>王耀</h4><div class="role">关节外科主任 · 主治医师</div><div class="skill">关节疾病诊治</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">任</div><div class="expert-info"><h4>任建国</h4><div class="role">院长助理 · 手足外科主任</div><div class="skill">手足外科 · 显微外科</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">兰</div><div class="expert-info"><h4>兰晓东</h4><div class="role">院长助理 · 康复医学科主任</div><div class="skill">康复医学</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">任</div><div class="expert-info"><h4>任江林</h4><div class="role">关节外科副主任</div><div class="skill">关节外科</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">胡</div><div class="expert-info"><h4>胡华</h4><div class="role">中医科副主任</div><div class="skill">中医骨伤</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">罗</div><div class="expert-info"><h4>罗晓琴</h4><div class="role">康复医学科副主任</div><div class="skill">康复治疗</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">湛</div><div class="expert-info"><h4>湛华阳</h4><div class="role">门诊部主任</div><div class="skill">门诊综合诊疗</div></div></div>
+        <div class="expert-card"><div class="expert-avatar-sm">向</div><div class="expert-info"><h4>向浩</h4><div class="role">内科主任</div><div class="skill">内科基础疾病管理</div></div></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 医院文化 -->
-    <section class="section">
-      <h2 class="section-title">医院文化</h2>
-      <div class="culture-box">
-        <p><strong>办院宗旨：</strong>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p>
-        <p><strong>办院方针：</strong>以病人为中心、以质量求生存、以创新促发展、以服务树形象、以专业铸品牌</p>
-        <p><strong>发展战略：</strong>专注骨科及与骨科紧密相关学科建设，全面实现高质量可持续发展</p>
-        <p><strong>使命：</strong>创骨科典范，友一方百姓</p>
-        <p><strong>愿景：</strong>建成受尊重的区域性骨科医院领导品牌</p>
+  <section class="section" id="culture">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">医院文化</span>
+        <h2 class="section-title">使命与愿景</h2>
+        <p class="section-desc">以病人为中心，以质量求生存，以专业铸品牌</p>
       </div>
-    </section>
+      <div class="culture-grid">
+        <div class="culture-card accent"><h3>🏥 办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div>
+        <div class="culture-card accent"><h3>🎯 使命</h3><p>创骨科典范，友一方百姓</p></div>
+        <div class="culture-card"><h3>🌿 院训</h3><p>责任 · 厚德 · 精业</p></div>
+        <div class="culture-card"><h3>⭐ 愿景</h3><p>建成受尊重的区域性骨科医院领导品牌</p></div>
+        <div class="culture-card"><h3>❤️ 服务理念</h3><p>生命第一、健康至上、病人满意</p></div>
+        <div class="culture-card"><h3>🤝 发展战略</h3><p>专注骨科及与骨科紧密相关学科建设，全面实现高质量可持续发展</p></div>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">联系我们</span>
+        <h2 class="section-title">健康热线</h2>
+        <p class="section-desc">专业医疗团队随时为您服务，建议提前电话预约</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-item"><div class="contact-icon">📍</div><div><h4>医院地址</h4><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div>
+          <div class="contact-info-item"><div class="contact-icon">📞</div><div><h4>健康热线</h4><p>023-8158-0502</p></div></div>
+          <div class="contact-info-item"><div class="contact-icon">🕐</div><div><h4>服务时间</h4><p>24小时急诊 · 门诊 8:00-17:00</p></div></div>
+        </div>
+        <div class="contact-cta"><h3>📞 立即拨打健康热线</h3><p>专业骨科团队为您答疑解惑</p><a href="tel:023-81580502" class="phone">023-8158-0502</a></div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
-    <p><strong>黔江创友骨科医院</strong></p>
+    <p class="hospital">黔江创友骨科医院</p>
     <p>地址：重庆市黔江区舟白街道武陵大道北段98号</p>
     <p>电话：023-8158-0502</p>
-    <br>
-    <p><em>生命第一、健康至上、病人满意</em></p>
+    <br><p>生命第一 · 健康至上 · 病人满意</p>
   </footer>
 
+  <script>window.addEventListener('scroll',function(){var n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>10)});var yu=document.getElementById('yuAvatar'),yuImg=document.createElement('img');yuImg.src='expert-yu.jpg';yuImg.alt='余晓辉';yuImg.onerror=function(){yu.textContent='余'};yu.parentElement.replaceChild(yuImg,yu);yuImg.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:50%';</script>
 </body>
 </html>
