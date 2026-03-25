@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黔江创友骨科医院 - 创骨科典范，友一方百姓</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .banner { width: 100%; height: 500px; background: url('banner.jpg') center/cover no-repeat; margin-bottom: 40px; position: relative; }
+    .banner-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 30px; }
+    .banner-overlay h1 { font-size: 36px; margin-bottom: 10px; }
+    .section { margin-bottom: 60px; }
+    .section-title { font-size: 28px; margin-bottom: 30px; text-align: center; color: #2c5c3e; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 30px; margin-bottom: 30px; }
+    .card { background: #f8f9fa; border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 300px; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .card h3 { font-size: 20px; margin-bottom: 10px; color: #2c5c3e; }
+    .stats { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; background: #f8f9fa; border-radius: 8px; padding: 20px 0; }
+    .stat-item { padding: 20px; min-width: 150px; }
+    .stat-number { font-size: 36px; font-weight: bold; color: #2c5c3e; }
+    .qualification-list { columns: 2; }
+    .qualification-list li { margin-bottom: 10px; list-style: none; padding-left: 30px; position: relative; font-size: 16px; line-height: 1.8; }
+    .qualification-list li:before { content: "✅"; position: absolute; left: 0; }
+    .expert-avatar { text-align: center; margin-bottom: 30px; }
+    .expert-avatar img { max-width: 300px; border-radius: 50%; border: 5px solid #f0f5f2; }
+    .expert-avatar h3 { margin-top: 15px; font-size: 22px; }
+    .expert-table { width: 100%; border-collapse: collapse; }
+    .expert-table td, .expert-table th { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+    .culture-box { background: #f0f5f2; padding: 30px; border-radius: 8px; line-height: 2; }
+    .footer { text-align: center; padding: 40px 20px; background: #2c5c3e; color: white; }
+    .footer p { margin-bottom: 8px; }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .qualification-list { columns: 1; }
+      .banner { height: 300px; }
+      .banner-overlay h1 { font-size: 24px; }
+      .stats { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 头部横幅 -->
+  <div class="banner">
+    <div class="banner-overlay">
+      <h1>黔江创友骨科医院</h1>
+      <p>创骨科典范 · 友一方百姓</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- 医院概况 -->
+    <section class="section">
+      <h2 class="section-title">医院概况</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>黔江创友骨科医院</strong>成立于2011年6月，是经重庆市卫生健康委员会批准成立的<strong>二级骨科专科医院</strong>，也是渝东南地区规模最大、技术实力最强的骨科专科医院。</p>
+          <br>
+          <p>医院位于重庆市黔江区舟白街道武陵大道北段98号，交通便利，环境优雅。现有职工167人，其中少数民族职工114人，占比68.26%。</p>
+          <br>
+          <p><strong>院训：<em>责任 · 厚德 · 精业</em></strong></p>
+        </div>
+        <div>
+          <img src="hospital.jpg" alt="黔江创友骨科医院" style="width:100%; border-radius:8px; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="stats" style="margin-top:40px;">
+        <div class="stat-item">
+          <div class="stat-number">2011</div>
+          <div>建院年份</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">101</div>
+          <div>开放床位</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">167</div>
+          <div>医务人员</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.8%</div>
+          <div>断肢再植存活率</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资质定点 -->
+    <section class="section">
+      <h2 class="section-title">资质定点</h2>
+      <ul class="qualification-list">
+        <li>重庆市120急救网络医院</li>
+        <li>城乡居民医疗保险定点</li>
+        <li>城镇职工医疗保险定点</li>
+        <li>工伤保险定点</li>
+        <li>商业保险定点</li>
+        <li>国家残疾儿童康复救助定点</li>
+      </ul>
+    </section>
+
+    <!-- 特色技术 -->
+    <section class="section">
+      <h2 class="section-title">特色技术</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <img src="tech-pediatric.jpg" alt="小儿矫形">
+          <div class="card-content">
+            <h3>👶 小儿矫形</h3>
+            <p>专业的小儿骨科矫形团队，擅长各类先天性及后天性骨关节畸形的手术治疗，帮助众多患儿恢复正常运动功能。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-replant.jpg" alt="断肢再植">
+          <div class="card-content">
+            <h3>🔬 断肢（指/趾）再植</h3>
+            <p>运用显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-joint.jpg" alt="关节置换">
+          <div class="card-content">
+            <h3>🦾 髋膝关节置换</h3>
+            <p>成熟的关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-robot.jpg" alt="机器人手术">
+          <div class="card-content">
+            <h3>🤖 机器人辅助手术</h3>
+            <p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-rehab.jpg" alt="颈肩腰腿痛">
+          <div class="card-content">
+            <h3>💆 慢性颈肩腰腿痛</h3>
+            <p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，解决长期疼痛困扰。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-rehab.jpg" alt="康复医学">
+          <div class="card-content">
+            <h3>💪 康复医学</h3>
+            <p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 专家团队 -->
+    <section class="section">
+      <h2 class="section-title">专家团队</h2>
+
+      <div class="expert-avatar">
+        <img src="expert-yu.jpg" alt="余晓辉 院长">
+        <h3>余晓辉</h3>
+        <p>首席骨科专家 · 院长 · 副主任医师</p>
+        <p style="max-width: 600px; margin: 10px auto;">从事骨科临床工作三十余年，在骨科常见病、多发病及疑难病症的诊治方面积累了丰富经验。擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形。</p>
+      </div>
+
+      <table class="expert-table">
+        <tbody>
+          <tr>
+            <td><strong>何鸿</strong></td>
+            <td>中医科主任 · 副主任医师</td>
+            <td>中医骨伤、康复理疗</td>
+          </tr>
+          <tr>
+            <td><strong>王耀</strong></td>
+            <td>关节外科主任 · 主治医师</td>
+            <td>关节疾病诊治</td>
+          </tr>
+          <tr>
+            <td><strong>任建国</strong></td>
+            <td>院长助理 · 手足外科主任</td>
+            <td>手足外科、显微外科</td>
+          </tr>
+          <tr>
+            <td><strong>兰晓东</strong></td>
+            <td>院长助理 · 康复医学科主任</td>
+            <td>康复医学</td>
+          </tr>
+          <tr>
+            <td><strong>任江林</strong></td>
+            <td>关节外科副主任</td>
+            <td>关节外科</td>
+          </tr>
+          <tr>
+            <td><strong>胡华</strong></td>
+            <td>中医科副主任</td>
+            <td>中医骨伤</td>
+          </tr>
+          <tr>
+            <td><strong>罗晓琴</strong></td>
+            <td>康复医学科副主任</td>
+            <td>康复治疗</td>
+          </tr>
+          <tr>
+            <td><strong>湛华阳</strong></td>
+            <td>门诊部主任</td>
+            <td>门诊综合诊疗</td>
+          </tr>
+          <tr>
+            <td><strong>向浩</strong></td>
+            <td>内科主任</td>
+            <td>内科基础疾病管理</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:30px;">
+        <img src="team.jpg" alt="专家团队合影" style="width:100%; border-radius:8px;">
+      </div>
+    </section>
+
+    <!-- 医院文化 -->
+    <section class="section">
+      <h2 class="section-title">医院文化</h2>
+      <div class="culture-box">
+        <p><strong>办院宗旨：</strong>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p>
+        <p><strong>办院方针：</strong>以病人为中心、以质量求生存、以创新促发展、以服务树形象、以专业铸品牌</p>
+        <p><strong>发展战略：</strong>专注骨科及与骨科紧密相关学科建设，全面实现高质量可持续发展</p>
+        <p><strong>使命：</strong>创骨科典范，友一方百姓</p>
+        <p><strong>愿景：</strong>建成受尊重的区域性骨科医院领导品牌</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p><strong>黔江创友骨科医院</strong></p>
+    <p>地址：重庆市黔江区舟白街道武陵大道北段98号</p>
+    <p>电话：023-8158-0502</p>
+    <br>
+    <p><em>生命第一、健康至上、病人满意</em></p>
+  </footer>
+
+</body>
+</html>
