@@ -1,1149 +1,250 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>黔江创友骨科医院 - 创骨科典范，友一方百姓</title>
-    <meta name="description" content="黔江创友骨科医院 - 渝东南首家国家二级骨科专科医院，专注骨科及与骨科紧密相关学科建设。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --primary: #1a5f7a;
-            --primary-dark: #134a5f;
-            --primary-light: #2d9596;
-            --accent: #e8b84a;
-            --bg: #f0f8fc;
-            --white: #ffffff;
-            --text: #333333;
-            --text-light: #666666;
-            --text-lighter: #999999;
-            --shadow: 0 4px 20px rgba(26, 95, 122, 0.12);
-            --shadow-hover: 0 8px 30px rgba(26, 95, 122, 0.2);
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-            color: var(--text);
-            background-color: var(--bg);
-        }
-
-        /* 导航栏 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        .navbar .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            height: 70px;
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--primary);
-        }
-        .nav-logo img {
-            height: 45px;
-            width: auto;
-        }
-        .nav-logo span {
-            font-size: 18px;
-            font-weight: 700;
-        }
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 15px;
-            transition: all 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            background: var(--primary);
-            color: var(--white);
-        }
-        .nav-emergency {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: var(--white) !important;
-            padding: 10px 20px !important;
-            border-radius: 25px !important;
-            font-weight: 500;
-        }
-        .nav-emergency:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
-        }
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-        .nav-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        /* 移动端导航 */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px;
-                gap: 10px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                transform: translateY(-120%);
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            .nav-toggle {
-                display: flex;
-            }
-        }
-
-        /* 页头 */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-light) 100%);
-            position: relative;
-            overflow: hidden;
-            padding-top: 70px;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            color: var(--white);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .hero-text .slogan {
-            font-size: 24px;
-            color: var(--accent);
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
-        .hero-text p {
-            font-size: 18px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-        .badge {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        .hero-btns {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: var(--primary-dark);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(232, 184, 74, 0.4);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary);
-        }
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-logo-wrap {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 50px;
-            border: 1px solid rgba(255,255,255,0.2);
-            text-align: center;
-        }
-        .hero-logo-wrap img {
-            max-height: 180px;
-            width: auto;
-        }
-        .hero-logo-wrap p {
-            color: rgba(255,255,255,0.8);
-            font-size: 16px;
-            margin-top: 16px;
-        }
-        @media (max-width: 900px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-text h1 { font-size: 36px; }
-            .hero-badges { justify-content: center; }
-            .hero-btns { justify-content: center; }
-            .hero-visual { order: -1; }
-            .hero-logo-wrap img { max-height: 140px; }
-        }
-
-        /* 统计数据 */
-        .stats {
-            background: var(--white);
-            padding: 40px 0;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-            border-radius: 20px 20px 0 0;
-        }
-        .stats-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-        }
-        .stat-num {
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1;
-        }
-        .stat-label {
-            color: var(--text-light);
-            font-size: 15px;
-            margin-top: 8px;
-        }
-        @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-num { font-size: 32px; }
-        }
-
-        /* 通用区块 */
-        .section {
-            padding: 80px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .section-tag {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: var(--white);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-size: 36px;
-            color: var(--text);
-            margin-bottom: 16px;
-        }
-        .section-desc {
-            font-size: 17px;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* 关于我们 */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .about-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .about-content h3 {
-            font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        .about-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        .about-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .about-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text);
-            font-size: 15px;
-        }
-        .about-list li::before {
-            content: '✓';
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .about-list { grid-template-columns: 1fr; }
-        }
-
-        /* 核心技术 */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            border: 1px solid rgba(26, 95, 122, 0.08);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .service-card h4 {
-            font-size: 20px;
-            color: var(--text);
-            margin-bottom: 12px;
-        }
-        .service-card p {
-            color: var(--text-light);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        @media (max-width: 900px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .services-grid { grid-template-columns: 1fr; }
-        }
-
-        /* 专家团队 */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-        .team-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-        }
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        .team-avatar {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: var(--white);
-        }
-        /* 首席专家 - 更大更突出 */
-        .team-leader-card {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(26, 95, 122, 0.25);
-            transition: all 0.3s;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-        }
-        .team-leader-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 50px rgba(26, 95, 122, 0.35);
-        }
-        .team-leader-card .team-avatar {
-            height: 100%;
-            min-height: 200px;
-            background: rgba(255,255,255,0.15);
-            font-size: 80px;
-        }
-        .team-leader-card .team-info {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .team-leader-card .team-info h4 {
-            font-size: 28px;
-            color: var(--white);
-            margin-bottom: 8px;
-        }
-        .team-leader-card .team-title {
-            color: var(--accent);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .team-leader-card .team-dept {
-            color: rgba(255,255,255,0.8);
-            font-size: 15px;
-        }
-        .team-leader-card .team-bio {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            margin-top: 12px;
-            line-height: 1.6;
-        }
-        .team-leader-wrap {
-            margin-bottom: 30px;
-        }
-        .team-info {
-            padding: 20px;
-        }
-        .team-info h4 {
-            font-size: 18px;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-        .team-title {
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-        .team-dept {
-            color: var(--text-lighter);
-            font-size: 13px;
-        }
-        @media (max-width: 900px) {
-            .team-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 500px) {
-            .team-grid { grid-template-columns: 1fr; }
-            .team-leader-card {
-                grid-template-columns: 1fr;
-            }
-            .team-leader-card .team-avatar {
-                height: 150px;
-                min-height: 150px;
-            }
-        }
-
-        /* 医院文化 */
-        .culture-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 80px 24px;
-            margin: 0;
-            max-width: 100%;
-        }
-        .culture-section .section-title,
-        .culture-section .section-desc {
-            color: var(--white);
-        }
-        .culture-section .section-tag {
-            background: rgba(255,255,255,0.2);
-        }
-        .values-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .value-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 16px;
-            padding: 30px;
-            transition: all 0.3s;
-        }
-        .value-card:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-5px);
-        }
-        .value-icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        .value-card h4 {
-            color: var(--white);
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .value-card p {
-            color: rgba(255,255,255,0.8);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        @media (max-width: 768px) {
-            .values-grid { grid-template-columns: 1fr; }
-        }
-
-        /* 联系方式 */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .contact-info {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        .contact-info h3 {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 24px;
-        }
-        .contact-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-            align-items: flex-start;
-        }
-        .contact-item .icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-        .contact-item .text h5 {
-            font-size: 14px;
-            color: var(--text-lighter);
-            font-weight: 400;
-            margin-bottom: 4px;
-        }
-        .contact-item .text p {
-            font-size: 16px;
-            color: var(--text);
-        }
-        .contact-item .text a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        .contact-item .text a:hover {
-            text-decoration: underline;
-        }
-        .contact-map {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-lighter);
-            font-size: 16px;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .contact-map .map-icon {
-            font-size: 60px;
-            opacity: 0.5;
-        }
-        @media (max-width: 768px) {
-            .contact-grid { grid-template-columns: 1fr; }
-        }
-
-        /* 底部 */
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255,255,255,0.7);
-            padding: 40px 24px;
-            text-align: center;
-        }
-        footer p {
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* 急救悬浮按钮 */
-        .emergency-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-        }
-        .emergency-float a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: var(--white);
-            padding: 16px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-            transition: all 0.3s;
-        }
-        .emergency-float a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5);
-        }
-
-        /* 动画 */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate {
-            opacity: 0;
-        }
-        .animate.visible {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黔江创友骨科医院 - 创骨科典范，友一方百姓</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; background: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .banner { width: 100%; height: 500px; background: url('banner.jpg') center/cover no-repeat; margin-bottom: 40px; position: relative; }
+    .banner-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: white; padding: 30px; }
+    .banner-overlay h1 { font-size: 36px; margin-bottom: 10px; }
+    .section { margin-bottom: 60px; }
+    .section-title { font-size: 28px; margin-bottom: 30px; text-align: center; color: #2c5c3e; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 30px; margin-bottom: 30px; }
+    .card { background: #f8f9fa; border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 300px; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .card h3 { font-size: 20px; margin-bottom: 10px; color: #2c5c3e; }
+    .stats { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; background: #f8f9fa; border-radius: 8px; padding: 20px 0; }
+    .stat-item { padding: 20px; min-width: 150px; }
+    .stat-number { font-size: 36px; font-weight: bold; color: #2c5c3e; }
+    .qualification-list { columns: 2; }
+    .qualification-list li { margin-bottom: 10px; list-style: none; padding-left: 30px; position: relative; font-size: 16px; line-height: 1.8; }
+    .qualification-list li:before { content: "✅"; position: absolute; left: 0; }
+    .expert-avatar { text-align: center; margin-bottom: 30px; }
+    .expert-avatar img { max-width: 300px; border-radius: 50%; border: 5px solid #f0f5f2; }
+    .expert-avatar h3 { margin-top: 15px; font-size: 22px; }
+    .expert-table { width: 100%; border-collapse: collapse; }
+    .expert-table td, .expert-table th { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+    .culture-box { background: #f0f5f2; padding: 30px; border-radius: 8px; line-height: 2; }
+    .footer { text-align: center; padding: 40px 20px; background: #2c5c3e; color: white; }
+    .footer p { margin-bottom: 8px; }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .qualification-list { columns: 1; }
+      .banner { height: 300px; }
+      .banner-overlay h1 { font-size: 24px; }
+      .stats { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="logo.png" alt="创友骨科">
-                <span>黔江创友骨科医院</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="active">医院简介</a></li>
-                <li><a href="#services">核心技术</a></li>
-                <li><a href="#team">专家团队</a></li>
-                <li><a href="#culture">医院文化</a></li>
-                <li><a href="#contact">联系我们</a></li>
-                <li><a href="tel:023-81580120" class="nav-emergency">🚑 急救热线</a></li>
-            </ul>
-            <div class="nav-toggle" id="navToggle">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- 页头 -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="slogan">创骨科典范 · 友一方百姓</p>
-                <h1>渝东南首家<br>国家二级骨科专科医院</h1>
-                <p>黔江创友骨科医院成立于2011年6月，是渝东南地区规模最大、技术实力最强的骨科专科医院。医院专注于骨科及与骨科紧密相关学科建设，让机构全面实现高质量可持续发展。</p>
-                <div class="hero-badges">
-                    <span class="badge">🏥 二级骨科专科医院</span>
-                    <span class="badge">💉 床位：101张</span>
-                    <span class="badge">👨‍⚕️ 医务人员：167人</span>
-                    <span class="badge">🎯 断肢再植存活率99.8%</span>
-                </div>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-primary">📞 立即咨询</a>
-                    <a href="tel:023-81580120" class="btn-outline">🚑 急救热线</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-logo-wrap">
-                    <img src="logo.png" alt="黔江创友骨科医院">
-                    <p>责任 · 厚德 · 精业</p>
-                </div>
-            </div>
+  <!-- 头部横幅 -->
+  <div class="banner">
+    <div class="banner-overlay">
+      <h1>黔江创友骨科医院</h1>
+      <p>创骨科典范 · 友一方百姓</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- 医院概况 -->
+    <section class="section">
+      <h2 class="section-title">医院概况</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>黔江创友骨科医院</strong>成立于2011年6月，是经重庆市卫生健康委员会批准成立的<strong>二级骨科专科医院</strong>，也是渝东南地区规模最大、技术实力最强的骨科专科医院。</p>
+          <br>
+          <p>医院位于重庆市黔江区舟白街道武陵大道北段98号，交通便利，环境优雅。现有职工167人，其中少数民族职工114人，占比68.26%。</p>
+          <br>
+          <p><strong>院训：<em>责任 · 厚德 · 精业</em></strong></p>
         </div>
+        <div>
+          <img src="hospital.jpg" alt="黔江创友骨科医院" style="width:100%; border-radius:8px; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+
+      <div class="stats" style="margin-top:40px;">
+        <div class="stat-item">
+          <div class="stat-number">2011</div>
+          <div>建院年份</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">101</div>
+          <div>开放床位</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">167</div>
+          <div>医务人员</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.8%</div>
+          <div>断肢再植存活率</div>
+        </div>
+      </div>
     </section>
 
-    <!-- 统计数据 -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-num">2011</div>
-                <div class="stat-label">建院年份</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">101</div>
-                <div class="stat-label">开放床位</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">167</div>
-                <div class="stat-label">医护人员</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">500+</div>
-                <div class="stat-label">成功手术案例</div>
-            </div>
-        </div>
+    <!-- 资质定点 -->
+    <section class="section">
+      <h2 class="section-title">资质定点</h2>
+      <ul class="qualification-list">
+        <li>重庆市120急救网络医院</li>
+        <li>城乡居民医疗保险定点</li>
+        <li>城镇职工医疗保险定点</li>
+        <li>工伤保险定点</li>
+        <li>商业保险定点</li>
+        <li>国家残疾儿童康复救助定点</li>
+      </ul>
     </section>
 
-    <!-- 医院简介 -->
-    <section class="section" id="about">
-        <div class="section-header">
-            <span class="section-tag">关于医院</span>
-            <h2 class="section-title">专业骨科 · 值得信赖</h2>
-            <p class="section-desc">我们致力于为患者提供最优质的骨科医疗服务，以精湛的医术和温暖的服务守护每一 位患者的健康</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-img">
-                <div style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); height: 350px; display: flex; align-items: center; justify-content: center; border-radius: 20px;">
-                    <span style="font-size: 120px; color: white; opacity: 0.3;">🏥</span>
-                </div>
-            </div>
-            <div class="about-content">
-                <h3>渝东南首家国家二级骨科专科医院</h3>
-                <p>黔江创友骨科医院成立于2011年6月，是经重庆市卫生健康委员会批准成立的二级骨科专科医院。医院位于重庆市黔江区舟白街道武陵大道北段98号，交通便利，环境优雅。</p>
-                <p>医院现有职工167人，其中少数民族职工114人，占比68.26%。我们拥有一支技术精湛、 服务优良的专业医疗团队，为患者提供安全、有效、温馨的医疗服务。</p>
-                <ul class="about-list">
-                    <li>120急救网络医院</li>
-                    <li>城乡居民医保定点</li>
-                    <li>城镇职工医保定点</li>
-                    <li>工伤保险定点</li>
-                    <li>商业保险定点</li>
-                    <li>残疾儿童康复救助定点</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- 特色技术 -->
+    <section class="section">
+      <h2 class="section-title">特色技术</h2>
 
-    <!-- 核心技术 -->
-    <section class="section" id="services" style="background: var(--white); max-width: 100%; padding-left: 0; padding-right: 0;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-            <div class="section-header">
-                <span class="section-tag">核心技术</span>
-                <h2 class="section-title">专科特色 · 技术领先</h2>
-                <p class="section-desc">医院配备先进设备，拥有多项核心技术，为患者提供精准、高效的诊疗服务</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">👶</div>
-                    <h4>小儿矫形</h4>
-                    <p>专业的小儿骨科矫形团队，擅长各类先天性及后天性骨关节畸形的手术治疗，帮助众多患儿恢复正常运动功能。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔬</div>
-                    <h4>断肢再植</h4>
-                    <p>运用显微外科技术进行断肢（指/趾）再植手术，成功率达99.8%，最大程度保留患者肢体功能。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🦾</div>
-                    <h4>关节置换</h4>
-                    <p>成熟的髋关节、膝关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h4>机器人手术</h4>
-                    <p>引进手术机器人，开展机器人引导下的脊柱修补术，实现精准定位，减少手术创伤，缩短恢复周期。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💆</div>
-                    <h4>颈肩腰腿痛</h4>
-                    <p>采用中西医结合方法，综合治疗慢性颈肩腰腿痛，为患者制定个性化康复方案。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
-                    <h4>康复医学</h4>
-                    <p>现代化的康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p>
-                </div>
-            </div>
+      <div class="grid-2">
+        <div class="card">
+          <img src="tech-pediatric.jpg" alt="小儿矫形">
+          <div class="card-content">
+            <h3>👶 小儿矫形</h3>
+            <p>专业的小儿骨科矫形团队，擅长各类先天性及后天性骨关节畸形的手术治疗，帮助众多患儿恢复正常运动功能。</p>
+          </div>
         </div>
+
+        <div class="card">
+          <img src="tech-replant.jpg" alt="断肢再植">
+          <div class="card-content">
+            <h3>🔬 断肢（指/趾）再植</h3>
+            <p>运用显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-joint.jpg" alt="关节置换">
+          <div class="card-content">
+            <h3>🦾 髋膝关节置换</h3>
+            <p>成熟的关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-robot.jpg" alt="机器人手术">
+          <div class="card-content">
+            <h3>🤖 机器人辅助手术</h3>
+            <p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-rehab.jpg" alt="颈肩腰腿痛">
+          <div class="card-content">
+            <h3>💆 慢性颈肩腰腿痛</h3>
+            <p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，解决长期疼痛困扰。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tech-rehab.JPG" alt="康复医学">
+          <div class="card-content">
+            <h3>💪 康复医学</h3>
+            <p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 专家团队 -->
-    <section class="section" id="team">
-        <div class="section-header">
-            <span class="section-tag">专家团队</span>
-            <h2 class="section-title">名医荟萃 · 护佑健康</h2>
-            <p class="section-desc">医院拥有一支高素质的专业技术团队，为患者的健康保驾护航</p>
-        </div>
-        <div class="team-leader-wrap">
-            <div class="team-leader-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>余晓辉</h4>
-                    <p class="team-title">首席骨科专家 · 院长</p>
-                    <p class="team-dept">副主任医师 · 医院管理及骨科临床</p>
-                    <p class="team-bio">从事骨科临床工作三十余年，在骨科常见病、多发病及疑难病症的诊治方面积累了丰富经验。擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形等，主持开展多项骨科新技术项目。</p>
-                </div>
-            </div>
-        </div>
+    <section class="section">
+      <h2 class="section-title">专家团队</h2>
 
-        <div class="team-grid" style="margin-top: 0;">
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>何鸿</h4>
-                    <p class="team-title">中医科主任 · 副主任医师</p>
-                    <p class="team-dept">中医骨伤、康复理疗</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>王耀</h4>
-                    <p class="team-title">关节外科主任 · 主治医师</p>
-                    <p class="team-dept">关节疾病诊治</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>任建国</h4>
-                    <p class="team-title">院长助理 · 手足外科主任</p>
-                    <p class="team-dept">手足外科、显微外科</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>兰晓东</h4>
-                    <p class="team-title">院长助理 · 康复医学科主任</p>
-                    <p class="team-dept">康复医学</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>任江林</h4>
-                    <p class="team-title">关节外科副主任</p>
-                    <p class="team-dept">关节外科</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>胡华</h4>
-                    <p class="team-title">中医科副主任</p>
-                    <p class="team-dept">中医骨伤</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>向浩</h4>
-                    <p class="team-title">内科主任 · 主治医师</p>
-                    <p class="team-dept">内科</p>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">👨‍⚕️</div>
-                <div class="team-info">
-                    <h4>罗晓琴</h4>
-                    <p class="team-title">康复医学科副主任 · 主治医师</p>
-                    <p class="team-dept">康复医学</p>
-                </div>
-            </div>
-        </div>
+      <div class="expert-avatar">
+        <img src="expert-yu.jpg" alt="余晓辉 院长">
+        <h3>余晓辉</h3>
+        <p>首席骨科专家 · 院长 · 副主任医师</p>
+        <p style="max-width: 600px; margin: 10px auto;">从事骨科临床工作三十余年，在骨科常见病、多发病及疑难病症的诊治方面积累了丰富经验。擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形。</p>
+      </div>
+
+      <table class="expert-table">
+        <tbody>
+          <tr>
+            <td><strong>何鸿</strong></td>
+            <td>中医科主任 · 副主任医师</td>
+            <td>中医骨伤、康复理疗</td>
+          </tr>
+          <tr>
+            <td><strong>王耀</strong></td>
+            <td>关节外科主任 · 主治医师</td>
+            <td>关节疾病诊治</td>
+          </tr>
+          <tr>
+            <td><strong>任建国</strong></td>
+            <td>院长助理 · 手足外科主任</td>
+            <td>手足外科、显微外科</td>
+          </tr>
+          <tr>
+            <td><strong>兰晓东</strong></td>
+            <td>院长助理 · 康复医学科主任</td>
+            <td>康复医学</td>
+          </tr>
+          <tr>
+            <td><strong>任江林</strong></td>
+            <td>关节外科副主任</td>
+            <td>关节外科</td>
+          </tr>
+          <tr>
+            <td><strong>胡华</strong></td>
+            <td>中医科副主任</td>
+            <td>中医骨伤</td>
+          </tr>
+          <tr>
+            <td><strong>罗晓琴</strong></td>
+            <td>康复医学科副主任</td>
+            <td>康复治疗</td>
+          </tr>
+          <tr>
+            <td><strong>湛华阳</strong></td>
+            <td>门诊部主任</td>
+            <td>门诊综合诊疗</td>
+          </tr>
+          <tr>
+            <td><strong>向浩</strong></td>
+            <td>内科主任</td>
+            <td>内科基础疾病管理</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:30px;">
+        <img src="team.JPG" alt="专家团队合影" style="width:100%; border-radius:8px;">
+      </div>
     </section>
 
     <!-- 医院文化 -->
-    <section class="culture-section" id="culture">
-        <div class="section-header">
-            <span class="section-tag">医院文化</span>
-            <h2 class="section-title">核心理念 · 文化价值观</h2>
-            <p class="section-desc">我们始终坚持"生命第一、健康至上"的服务原则，以专业的医疗技术守护患者健康</p>
-        </div>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h4>使命</h4>
-                <p>创骨科典范，友一方百姓。建成受尊重的区域性骨科医院领导品牌。</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">💡</div>
-                <h4>院训</h4>
-                <p>责任 · 厚德 · 精业。献身医学，救死扶伤，不辞艰辛，精益求精。</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">❤️</div>
-                <h4>服务宗旨</h4>
-                <p>以病人为中心、以质量求生存、以创新促发展、以服务树形象、以专业铸品牌。</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h4>核心价值观</h4>
-                <p>客户第一、团队合作、诚实守信、积极向上、感恩奉献、拥抱变化、注重结果。</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🌟</div>
-                <h4>发展战略</h4>
-                <p>专注于骨科及与骨科紧密相关或对骨科有直接支撑作用的学科建设，让机构全面实现高质量可持续发展。</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🏆</div>
-                <h4>荣誉资质</h4>
-                <p>黔江区"青年文明号"、黔江区"扶残助残爱心单位"、黔江区"A级纳税企业"、国家民族团结进步示范单位。</p>
-            </div>
-        </div>
+    <section class="section">
+      <h2 class="section-title">医院文化</h2>
+      <div class="culture-box">
+        <p><strong>办院宗旨：</strong>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p>
+        <p><strong>办院方针：</strong>以病人为中心、以质量求生存、以创新促发展、以服务树形象、以专业铸品牌</p>
+        <p><strong>发展战略：</strong>专注骨科及与骨科紧密相关学科建设，全面实现高质量可持续发展</p>
+        <p><strong>使命：</strong>创骨科典范，友一方百姓</p>
+        <p><strong>愿景：</strong>建成受尊重的区域性骨科医院领导品牌</p>
+      </div>
     </section>
 
-    <!-- 设备投资 -->
-    <section class="section" id="equipment">
-        <div class="section-header">
-            <span class="section-tag">先进设备</span>
-            <h2 class="section-title">设备投资8000余万</h2>
-            <p class="section-desc">医院配备核磁共振、CT、手术机器人等大型设备1000余台套</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto;">
-            <div style="background: var(--white); border-radius: 16px; padding: 30px; text-align: center; box-shadow: var(--shadow);">
-                <div style="font-size: 48px; margin-bottom: 16px;">🤖</div>
-                <h4 style="color: var(--primary); margin-bottom: 8px;">手术机器人</h4>
-                <p style="color: var(--text-light); font-size: 14px;">精准导航，微创手术</p>
-            </div>
-            <div style="background: var(--white); border-radius: 16px; padding: 30px; text-align: center; box-shadow: var(--shadow);">
-                <div style="font-size: 48px; margin-bottom: 16px;">🧲</div>
-                <h4 style="color: var(--primary); margin-bottom: 8px;">核磁共振</h4>
-                <p style="color: var(--text-light); font-size: 14px;">高清晰度成像诊断</p>
-            </div>
-            <div style="background: var(--white); border-radius: 16px; padding: 30px; text-align: center; box-shadow: var(--shadow);">
-                <div style="font-size: 48px; margin-bottom: 16px;">💻</div>
-                <h4 style="color: var(--primary); margin-bottom: 8px;">CT设备</h4>
-                <p style="color: var(--text-light); font-size: 14px;">快速精准断层扫描</p>
-            </div>
-        </div>
-    </section>
+  </div>
 
-    <!-- 联系我们 -->
-    <section class="section" id="contact">
-        <div class="section-header">
-            <span class="section-tag">联系我们</span>
-            <h2 class="section-title">联系我们</h2>
-            <p class="section-desc">您的健康是我们最大的心愿，欢迎随时咨询</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>联系方式</h3>
-                <div class="contact-item">
-                    <div class="icon">📍</div>
-                    <div class="text">
-                        <h5>医院地址</h5>
-                        <p>重庆市黔江区舟白街道武陵大道北段98号</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon">📞</div>
-                    <div class="text">
-                        <h5>咨询电话</h5>
-                        <p><a href="tel:023-81580502">023-81580502</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon">🚑</div>
-                    <div class="text">
-                        <h5>急救热线</h5>
-                        <p><a href="tel:023-81580120" style="color: #e74c3c; font-weight: 700;">023-81580120</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon">🕐</div>
-                    <div class="text">
-                        <h5>急诊时间</h5>
-                        <p>24小时全天候急诊服务</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-map">
-                <div class="map-icon">🗺️</div>
-                <p>重庆市黔江区舟白街道武陵大道北段98号</p>
-                <a href="https://maps.baidu.com" target="_blank" class="btn-primary" style="margin-top: 10px;">打开地图导航</a>
-            </div>
-        </div>
-    </section>
+  <footer class="footer">
+    <p><strong>黔江创友骨科医院</strong></p>
+    <p>地址：重庆市黔江区舟白街道武陵大道北段98号</p>
+    <p>电话：023-8158-0502</p>
+    <br>
+    <p><em>生命第一、健康至上、病人满意</em></p>
+  </footer>
 
-    <!-- 底部 -->
-    <footer>
-        <p>© 2026 黔江创友骨科医院 版权所有</p>
-        <p>地址：重庆市黔江区舟白街道武陵大道北段98号 | 急救电话：<a href="tel:023-81580120">023-81580120</a></p>
-    </footer>
-
-    <!-- 急救悬浮按钮 -->
-    <div class="emergency-float">
-        <a href="tel:023-81580120">
-            <span>🚑</span>
-            <span>急救热线</span>
-        </a>
-    </div>
-
-    <script>
-        // 移动端导航
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        const navHeight = document.querySelector('.navbar').offsetHeight;
-                        const targetPosition = target.offsetTop - navHeight;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // 滚动动画
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-
-        // 导航高亮
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-links a').forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href') === '#' + current) {
-                    a.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
