@@ -4,289 +4,436 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>黔江创友骨科医院 - 创骨科典范，友一方百姓</title>
-  <meta name="description" content="渝东南首家国家二级骨科专科医院，断肢再植存活率99.8%，小儿骨科、关节置换、机器人手术权威专家团队。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--primary:#0d6e6e;--primary-dark:#094d4d;--primary-light:#1a9494;--accent:#e8a838;--bg:#f7fafc;--white:#ffffff;--text:#2d3748;--text-light:#4a5568;--text-lighter:#718096;--border:#e2e8f0;--shadow:0 4px 24px rgba(13,110,110,0.1);--shadow-lg:0 12px 40px rgba(13,110,110,0.15)}
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.8;color:var(--text);background:var(--white)}
-    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--border);transition:box-shadow .3s}
-    .navbar.scrolled{box-shadow:var(--shadow)}
-    .nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:70px}
-    .nav-logo{display:flex;align-items:center;gap:10px;color:var(--primary);font-weight:700;font-size:18px;text-decoration:none}
-    .nav-logo img{height:44px}
-    .nav-links{display:flex;list-style:none;gap:4px;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--text-light);padding:8px 16px;border-radius:8px;font-size:15px;font-weight:500;transition:all .2s}
-    .nav-links a:hover{background:var(--bg);color:var(--primary)}
-    .nav-emergency{background:linear-gradient(135deg,#e53e3e,#c53030)!important;color:#fff!important;border-radius:50px!important;font-weight:600!important;box-shadow:0 4px 12px rgba(229,62,62,0.3)!important}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-    .hamburger span{width:24px;height:2px;background:var(--primary);border-radius:2px}
-    @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;position:fixed;top:70px;left:0;right:0;background:var(--white);flex-direction:column;padding:20px;gap:4px;box-shadow:var(--shadow);border-radius:0 0 16px 16px}.nav-links.open{display:flex}.nav-links a{width:100%;text-align:center}}
-    .hero{position:relative;height:100vh;min-height:600px;background:url('banner.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center}
-    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(9,77,77,0.75),rgba(13,110,110,0.5))}
-    .hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:0 24px;max-width:800px}
-    .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:6px 20px;font-size:14px;margin-bottom:24px;backdrop-filter:blur(4px)}
-    .hero h1{font-size:56px;font-weight:700;line-height:1.2;margin-bottom:16px;letter-spacing:2px}
-    .hero .sub{font-size:22px;opacity:0.9;margin-bottom:8px}
-    .hero .slogan{font-size:28px;font-weight:300;opacity:0.85;margin-bottom:40px;letter-spacing:4px}
-    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .btn-primary{background:linear-gradient(135deg,var(--accent),#d4922a);color:#fff;padding:14px 36px;border-radius:50px;font-size:16px;font-weight:600;text-decoration:none;box-shadow:0 6px 20px rgba(232,168,56,0.4);transition:all .3s}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,168,56,0.5)}
-    .btn-outline{border:2px solid rgba(255,255,255,0.6);color:#fff;padding:12px 36px;border-radius:50px;font-size:16px;font-weight:500;text-decoration:none;backdrop-filter:blur(4px);transition:all .3s}
-    .btn-outline:hover{background:rgba(255,255,255,0.15);border-color:#fff}
-    @media(max-width:768px){.hero h1{font-size:36px}.hero .sub{font-size:16px}.hero .slogan{font-size:20px}}
-    .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:1;color:rgba(255,255,255,0.6);font-size:13px;animation:bounce 2s infinite}
-    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-    .stats-bar{background:linear-gradient(135deg,var(--primary-dark),var(--primary));padding:40px 0}
-    .stats-grid{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
-    .stat-item{text-align:center;color:#fff;min-width:140px}
-    .stat-num{font-size:48px;font-weight:700;line-height:1;margin-bottom:6px}
-    .stat-label{font-size:15px;opacity:0.8}
-    .section{padding:80px 0}
-    .container{max-width:1200px;margin:0 auto;padding:0 32px}
-    .section-tag{display:inline-block;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;padding:4px 16px;border-radius:50px;font-size:13px;font-weight:500;margin-bottom:16px}
-    .section-title{font-size:36px;font-weight:700;color:var(--text);margin-bottom:16px}
-    .section-desc{font-size:17px;color:var(--text-light);max-width:600px;margin-bottom:50px}
-    .text-center{text-align:center}
-    .text-center .section-desc{margin:0 auto 50px}
-    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .intro-img-wrap{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg)}
-    .intro-img-wrap img{width:100%;height:400px;object-fit:cover;display:block}
-    .intro-text h2{font-size:30px;font-weight:700;margin-bottom:16px;color:var(--text)}
-    .intro-text p{color:var(--text-light);margin-bottom:16px;font-size:16px}
-    .intro-highlight{background:linear-gradient(135deg,#e6f5f5,#d0efef);border-left:4px solid var(--primary);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0}
-    .intro-highlight p{margin:0;font-size:18px;font-weight:500;color:var(--primary-dark)}
-    .intro-tags{display:flex;flex-wrap:wrap;gap:10px}
-    .intro-tag{background:var(--white);border:1px solid var(--border);padding:6px 14px;border-radius:6px;font-size:14px;color:var(--text-light)}
-    @media(max-width:768px){.intro-grid{grid-template-columns:1fr;gap:30px}.intro-img-wrap img{height:260px}}
-    .qual-section{background:var(--bg)}
-    .qual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .qual-item{background:var(--white);border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:all .2s}
-    .qual-item:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-    .qual-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
-    .qual-text{font-size:15px;font-weight:500;color:var(--text)}
-    @media(max-width:768px){.qual-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:480px){.qual-grid{grid-template-columns:1fr}}
-    .tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .tech-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:all .3s;border:1px solid var(--border)}
-    .tech-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-    .tech-card img{width:100%;height:200px;object-fit:cover}
-    .tech-body{padding:24px}
-    .tech-emoji{font-size:32px;margin-bottom:12px}
-    .tech-body h3{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--text)}
-    .tech-body p{font-size:14px;color:var(--text-light);line-height:1.7}
-    @media(max-width:900px){.tech-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.tech-grid{grid-template-columns:1fr}}
-    .expert-section{background:linear-gradient(135deg,#f0f9f9,#e0f2f2)}
-    .expert-lead{text-align:center;max-width:700px;margin:0 auto 50px}
-    .expert-avatar-wrap{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 16px;border:4px solid var(--white);box-shadow:var(--shadow);background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;font-weight:700}
-    .expert-lead h3{font-size:24px;font-weight:700;color:var(--text)}
-    .expert-lead .title{color:var(--primary);font-weight:500;margin-bottom:10px}
-    .expert-lead p{color:var(--text-light);font-size:15px}
-    .expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .expert-card{background:var(--white);border-radius:12px;padding:20px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:all .2s}
-    .expert-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-    .expert-avatar-sm{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700;flex-shrink:0}
-    .expert-info h4{font-size:15px;font-weight:700;color:var(--text)}
-    .expert-info .role{font-size:13px;color:var(--primary);margin-bottom:2px}
-    .expert-info .skill{font-size:12px;color:var(--text-lighter)}
-    @media(max-width:900px){.expert-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.expert-grid{grid-template-columns:1fr}}
-    .culture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .culture-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:var(--shadow);border:1px solid var(--border)}
-    .culture-card h3{font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-    .culture-card p{font-size:15px;color:var(--text-light);line-height:1.9}
-    .culture-card.accent{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff}
-    .culture-card.accent h3{color:#fff}
-    .culture-card.accent p{color:rgba(255,255,255,0.85)}
-    @media(max-width:768px){.culture-grid{grid-template-columns:1fr}}
-    .contact-section{background:var(--primary-dark);color:#fff}
-    .contact-section .section-tag{background:rgba(255,255,255,0.15)}
-    .contact-section .section-title{color:#fff}
-    .contact-section .section-desc{color:rgba(255,255,255,0.7)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-    .contact-info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
-    .contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-    .contact-info-item h4{font-size:15px;font-weight:600;margin-bottom:4px}
-    .contact-info-item p{font-size:14px;opacity:0.8}
-    .contact-cta{background:linear-gradient(135deg,var(--accent),#d4922a);border-radius:16px;padding:32px;text-align:center}
-    .contact-cta h3{font-size:22px;margin-bottom:8px}
-    .contact-cta p{font-size:15px;opacity:0.9;margin-bottom:20px}
-    .contact-cta .phone{font-size:28px;font-weight:700;letter-spacing:2px;color:#fff;text-decoration:none}
-    @media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
-    .footer{background:#072e2e;color:rgba(255,255,255,0.6);text-align:center;padding:32px;font-size:14px}
-    .footer p{margin-bottom:6px}
-    .footer .hospital{font-size:16px;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:8px}
-  </style>
+  <meta name="description" content="黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年，断肢再植存活率99.8%">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="navbar" id="navbar">
-    <div class="nav-wrap">
-      <a href="#" class="nav-logo"><img src="logo.png" alt="创友骨科" onerror="this.style.display='none'"><span>黔江创友骨科医院</span></a>
-      <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
-      <ul class="nav-links">
-        <li><a href="#intro">医院概况</a></li>
-        <li><a href="#tech">特色技术</a></li>
-        <li><a href="#experts">专家团队</a></li>
-        <li><a href="#culture">医院文化</a></li>
-        <li><a href="#contact" class="nav-emergency">📞 立即咨询</a></li>
-      </ul>
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="创友骨科" onerror="this.style.display='none'">
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">黔江创友骨科医院</span>
+          <span class="nav-logo-en">Chuangyou Orthopedic Hospital</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#intro" class="nav-link active">医院概况</a>
+        <a href="#tech" class="nav-link">核心技术</a>
+        <a href="#experts" class="nav-link">专家团队</a>
+        <a href="#equipment" class="nav-link">设备实力</a>
+        <a href="#welfare" class="nav-link">公益足迹</a>
+        <a href="#honor" class="nav-link">资质荣誉</a>
+        <a href="#culture" class="nav-link">医院文化</a>
+        <a href="#contact" class="nav-link">联系我们</a>
+      </div>
+      <a href="tel:023-81580502" class="nav-phone">023-81580502</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge">🏥 渝东南首家国家二级骨科专科医院</div>
-      <h1>黔江创友骨科医院</h1>
-      <p class="sub">十五年专注骨科 · 服务渝东南百姓</p>
-      <p class="slogan">创骨科典范 · 友一方百姓</p>
-      <div class="hero-btns">
-        <a href="#tech" class="btn-primary">了解特色技术</a>
-        <a href="#experts" class="btn-outline">专家团队</a>
+      <h1 class="hero-title">黔江创友骨科医院</h1>
+      <p class="hero-subtitle">十五年专注骨科 · 服务渝东南百姓</p>
+      <p class="hero-slogan">创骨科典范 · 友一方百姓</p>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-number">2011</div><div class="stat-label">建院年份</div></div>
+        <div class="stat-card"><div class="stat-number">101</div><div class="stat-label">开放床位</div></div>
+        <div class="stat-card"><div class="stat-number">167</div><div class="stat-label">医务人员</div></div>
+        <div class="stat-card"><div class="stat-number">99.8%</div><div class="stat-label">断肢再植存活率</div></div>
+        <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">成功手术案例</div></div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">预约挂号</a>
+        <a href="#tech" class="btn btn-secondary">了解技术</a>
+      </div>
+      <div class="hero-video">
+        <div class="video-placeholder">
+          <img src="banner.jpg" alt="医院宣传视频" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;" onerror="this.remove()">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="video-text">宣传视频（待上传）</span>
+        </div>
       </div>
     </div>
-    <div class="scroll-hint">↓ 向下滚动</div>
+    <div class="scroll-indicator"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
   </section>
-
-  <div class="stats-bar">
-    <div class="stats-grid">
-      <div class="stat-item"><div class="stat-num">2011</div><div class="stat-label">建院年份</div></div>
-      <div class="stat-item"><div class="stat-num">101</div><div class="stat-label">开放床位</div></div>
-      <div class="stat-item"><div class="stat-num">167</div><div class="stat-label">医务人员</div></div>
-      <div class="stat-item"><div class="stat-num">99.8%</div><div class="stat-label">断肢再植存活率</div></div>
-      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">成功手术案例</div></div>
-    </div>
-  </div>
 
   <section class="section" id="intro">
     <div class="container">
       <div class="intro-grid">
-        <div class="intro-img-wrap"><img src="banner.jpg" alt="黔江创友骨科医院"></div>
-        <div class="intro-text">
-          <span class="section-tag">医院概况</span>
+        <div class="intro-image">
+          <div class="intro-image-placeholder">
+            <img src="医院全景1.jpg" alt="医院全景" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            <svg viewBox="0 0 24 24" style="position:absolute"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <span>医院全景照片（待上传）</span>
+          </div>
+        </div>
+        <div class="intro-content">
           <h2>渝东南规模最大的骨科专科医院</h2>
           <p>黔江创友骨科医院成立于2011年6月，是经重庆市卫生健康委员会批准成立的二级骨科专科医院。十五年深耕骨科，现已发展成为渝东南地区规模最大、技术实力最强的骨科专科医院。</p>
           <p>医院位于重庆市黔江区舟白街道武陵大道北段98号，环境优雅，交通便利。现有职工167人，其中少数民族职工114人（占比68.26%），是一支充满活力的专业医疗团队。</p>
-          <div class="intro-highlight"><p>🏆 断肢（指/趾）再植存活率达 99.8%</p></div>
-          <div class="intro-tags">
-            <span class="intro-tag">🏥 二级专科医院</span>
-            <span class="intro-tag">🧬 医保定点</span>
-            <span class="intro-tag">🚑 120急救网络</span>
-            <span class="intro-tag">👶 残疾儿童救助定点</span>
+          <div class="intro-features">
+            <div class="intro-feature"><div class="intro-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="intro-feature-text">二级专科医院</span></div>
+            <div class="intro-feature"><div class="intro-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="intro-feature-text">断肢再植99.8%</span></div>
+            <div class="intro-feature"><div class="intro-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="intro-feature-text">医保定点</span></div>
+            <div class="intro-feature"><div class="intro-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><span class="intro-feature-text">120急救网络</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section qual-section" id="qual">
+  <section class="section section-alt" id="tech">
     <div class="container">
-      <div class="text-center">
-        <span class="section-tag">资质认证</span>
-        <h2 class="section-title">多定点资质，看病更方便</h2>
-        <p class="section-desc">持医保卡即可直接就医，覆盖城乡居民、职工、工伤及商业保险</p>
-      </div>
-      <div class="qual-grid">
-        <div class="qual-item"><div class="qual-icon">🚑</div><div class="qual-text">重庆市120急救网络医院</div></div>
-        <div class="qual-item"><div class="qual-icon">🏥</div><div class="qual-text">城乡居民医疗保险定点</div></div>
-        <div class="qual-item"><div class="qual-icon">👨⚕️</div><div class="qual-text">城镇职工医疗保险定点</div></div>
-        <div class="qual-item"><div class="qual-icon">🛡️</div><div class="qual-text">工伤保险定点医院</div></div>
-        <div class="qual-item"><div class="qual-icon">💳</div><div class="qual-text">商业保险定点医院</div></div>
-        <div class="qual-item"><div class="qual-icon">👶</div><div class="qual-text">残疾儿童康复救助定点</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="tech">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag">核心技术</span>
-        <h2 class="section-title">六大特色专科，全方位骨科服务</h2>
-        <p class="section-desc">技术立院，十五年积累，为患者提供精准、安全、高效的医疗服务</p>
+      <div class="section-header">
+        <div class="section-badge">⚡ 核心技术</div>
+        <h2 class="section-title">六大特色技术 守护骨骼健康</h2>
+        <p class="section-subtitle">专业团队 · 先进设备 · 精湛技术</p>
       </div>
       <div class="tech-grid">
-        <div class="tech-card"><img src="tech-pediatric.jpg" alt="小儿矫形" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">👶</div><h3>小儿骨科矫形</h3><p>专业小儿骨科团队，擅长各类先天性及后天性骨关节畸形手术，帮助众多患儿恢复正常运动功能。</p></div></div>
-        <div class="tech-card"><img src="tech-replant.jpg" alt="断肢再植" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🔬</div><h3>断肢（指/趾）再植</h3><p>运用先进显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p></div></div>
-        <div class="tech-card"><img src="tech-joint.jpg" alt="关节置换" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🦾</div><h3>髋膝关节置换</h3><p>成熟关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高，告别关节疼痛。</p></div></div>
-        <div class="tech-card"><img src="tech-robot.jpg" alt="机器人手术" onerror="this.style.display='none'"><div class="tech-body"><div class="tech-emoji">🤖</div><h3>机器人辅助手术</h3><p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p></div></div>
-        <div class="tech-card"><img src="tech-rehab.JPG" alt="颈肩腰腿痛" onerror="this.src='tech-rehab.jpg'"><div class="tech-body"><div class="tech-emoji">💆</div><h3>慢性颈肩腰腿痛</h3><p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，有效解决长期疼痛困扰。</p></div></div>
-        <div class="tech-card"><img src="tech-rehab.JPG" alt="康复医学" onerror="this.src='tech-rehab.jpg'"><div class="tech-body"><div class="tech-emoji">💪</div><h3>康复医学</h3><p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p></div></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg></div><h3>小儿骨科矫形</h3><p>专业小儿骨科团队，擅长各类先天性及后天性骨关节畸形手术，帮助众多患儿恢复正常运动功能。</p><span class="tech-highlight">🏆 康复救助定点</span></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M17.66 8L12 2.35 6.34 8C4.78 9.56 4 11.64 4 13.64s.78 4.11 2.34 5.67 3.61 2.35 5.66 2.35 4.1-.79 5.66-2.35S20 15.64 20 13.64 19.22 9.56 17.66 8zM6 14c.01-2 .62-3.27 1.76-4.4L12 5.27l4.24 4.38C17.38 10.77 17.99 12 18 14H6z"/></svg></div><h3>断肢（指/趾）再植</h3><p>运用先进显微外科技术进行断肢再植手术，成功率高达99.8%，最大程度保留患者肢体功能。</p><span class="tech-highlight" style="background:var(--accent)">🔥 存活率99.8%</span></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6v-4zm6-6h4v3h-4V7zM6 7h5v5H6V7zm6 4h4v6h-4v-6z"/></svg></div><h3>髋膝关节置换</h3><p>成熟关节置换技术，由经验丰富的专家主刀，术后恢复快，患者满意度高，告别关节疼痛。</p></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div><h3>机器人辅助手术</h3><p>引进先进手术机器人，开展机器人引导下脊柱修补术，精准定位，减少创伤，缩短恢复周期。</p><span class="tech-highlight" style="background:var(--secondary)">🤖 精准医疗</span></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg></div><h3>慢性颈肩腰腿痛</h3><p>采用中西医结合方法，综合治疗，为患者制定个性化康复方案，有效解决长期疼痛困扰。</p></div>
+        <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg></div><h3>康复医学</h3><p>现代化康复医学科，提供术后康复、运动损伤康复、慢性疼痛管理等全方位康复服务。</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section expert-section" id="experts">
+  <section class="section" id="experts">
     <div class="container">
-      <div class="text-center">
-        <span class="section-tag">专家团队</span>
-        <h2 class="section-title">资深专家团队，护佑患者健康</h2>
-        <p class="section-desc">30余年临床经验，专注骨科，守护渝东南百姓</p>
+      <div class="section-header">
+        <div class="section-badge">👨‍⚕️ 专家团队</div>
+        <h2 class="section-title">资深专家 护佑健康</h2>
+        <p class="section-subtitle">经验丰富的医疗团队，为您提供专业诊疗服务</p>
       </div>
-      <div class="expert-lead">
-        <div class="expert-avatar-wrap" id="yuAvatar">余</div>
-        <h3>余晓辉</h3>
-        <p class="title">首席骨科专家 · 院长 · 副主任医师</p>
-        <p>从事骨科临床工作三十余年，擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形等，主持开展多项骨科新技术项目。</p>
-      </div>
-      <div class="expert-grid">
-        <div class="expert-card"><div class="expert-avatar-sm">何</div><div class="expert-info"><h4>何鸿</h4><div class="role">中医科主任 · 副主任医师</div><div class="skill">中医骨伤 · 康复理疗</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">王</div><div class="expert-info"><h4>王耀</h4><div class="role">关节外科主任 · 主治医师</div><div class="skill">关节疾病诊治</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">任</div><div class="expert-info"><h4>任建国</h4><div class="role">院长助理 · 手足外科主任</div><div class="skill">手足外科 · 显微外科</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">兰</div><div class="expert-info"><h4>兰晓东</h4><div class="role">院长助理 · 康复医学科主任</div><div class="skill">康复医学</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">任</div><div class="expert-info"><h4>任江林</h4><div class="role">关节外科副主任</div><div class="skill">关节外科</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">胡</div><div class="expert-info"><h4>胡华</h4><div class="role">中医科副主任</div><div class="skill">中医骨伤</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">罗</div><div class="expert-info"><h4>罗晓琴</h4><div class="role">康复医学科副主任</div><div class="skill">康复治疗</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">湛</div><div class="expert-info"><h4>湛华阳</h4><div class="role">门诊部主任</div><div class="skill">门诊综合诊疗</div></div></div>
-        <div class="expert-card"><div class="expert-avatar-sm">向</div><div class="expert-info"><h4>向浩</h4><div class="role">内科主任</div><div class="skill">内科基础疾病管理</div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="culture">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag">医院文化</span>
-        <h2 class="section-title">使命与愿景</h2>
-        <p class="section-desc">以病人为中心，以质量求生存，以专业铸品牌</p>
-      </div>
-      <div class="culture-grid">
-        <div class="culture-card accent"><h3>🏥 办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div>
-        <div class="culture-card accent"><h3>🎯 使命</h3><p>创骨科典范，友一方百姓</p></div>
-        <div class="culture-card"><h3>🌿 院训</h3><p>责任 · 厚德 · 精业</p></div>
-        <div class="culture-card"><h3>⭐ 愿景</h3><p>建成受尊重的区域性骨科医院领导品牌</p></div>
-        <div class="culture-card"><h3>❤️ 服务理念</h3><p>生命第一、健康至上、病人满意</p></div>
-        <div class="culture-card"><h3>🤝 发展战略</h3><p>专注骨科及与骨科紧密相关学科建设，全面实现高质量可持续发展</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-tag">联系我们</span>
-        <h2 class="section-title">健康热线</h2>
-        <p class="section-desc">专业医疗团队随时为您服务，建议提前电话预约</p>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-info-item"><div class="contact-icon">📍</div><div><h4>医院地址</h4><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div>
-          <div class="contact-info-item"><div class="contact-icon">📞</div><div><h4>健康热线</h4><p>023-8158-0502</p></div></div>
-          <div class="contact-info-item"><div class="contact-icon">🕐</div><div><h4>服务时间</h4><p>24小时急诊 · 门诊 8:00-17:00</p></div></div>
+      <div class="experts-grid">
+        <div class="expert-card expert-card-chairman">
+          <div class="expert-image"><div class="expert-image-placeholder"><img src="DSC02096.JPG" alt="余晓辉院长" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"><div class="expert-avatar">余</div><span>院长照片（待上传）</span></div></div>
+          <div class="expert-info"><h3>余晓辉</h3><p class="expert-title">院长 · 副主任医师</p><p class="expert-dept">首席骨科专家</p><p>从事骨科临床工作三十余年，擅长髋膝关节置换、脊柱外科手术、小儿骨科矫形等，主持开展多项骨科新技术项目。</p></div>
         </div>
-        <div class="contact-cta"><h3>📞 立即拨打健康热线</h3><p>专业骨科团队为您答疑解惑</p><a href="tel:023-81580502" class="phone">023-8158-0502</a></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">何</div><span>照片待上传</span></div></div><div class="expert-info"><h3>何鸿</h3><p class="expert-title">副主任医师</p><p class="expert-dept">中医科主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">王</div><span>照片待上传</span></div></div><div class="expert-info"><h3>王耀</h3><p class="expert-title">主治医师</p><p class="expert-dept">关节外科主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">任</div><span>照片待上传</span></div></div><div class="expert-info"><h3>任建国</h3><p class="expert-title">主治医师</p><p class="expert-dept">手足外科主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">兰</div><span>照片待上传</span></div></div><div class="expert-info"><h3>兰晓东</h3><p class="expert-title">主治医师</p><p class="expert-dept">康复医学科主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">任</div><span>照片待上传</span></div></div><div class="expert-info"><h3>任江林</h3><p class="expert-title">执业医师</p><p class="expert-dept">关节外科副主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">胡</div><span>照片待上传</span></div></div><div class="expert-info"><h3>胡华</h3><p class="expert-title">执业医师</p><p class="expert-dept">中医科副主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">罗</div><span>照片待上传</span></div></div><div class="expert-info"><h3>罗晓琴</h3><p class="expert-title">主治医师</p><p class="expert-dept">康复医学科副主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">湛</div><span>照片待上传</span></div></div><div class="expert-info"><h3>湛华阳</h3><p class="expert-title">执业医师</p><p class="expert-dept">门诊部主任</p></div></div>
+        <div class="expert-card"><div class="expert-image"><div class="expert-image-placeholder"><div class="expert-avatar">向</div><span>照片待上传</span></div></div><div class="expert-info"><h3>向浩</h3><p class="expert-title">主治医师</p><p class="expert-dept">内科主任</p></div></div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p class="hospital">黔江创友骨科医院</p>
-    <p>地址：重庆市黔江区舟白街道武陵大道北段98号</p>
-    <p>电话：023-8158-0502</p>
-    <br><p>生命第一 · 健康至上 · 病人满意</p>
-  </footer>
+  <section class="section section-alt" id="equipment">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🔬 设备实力</div>
+        <h2 class="section-title">先进设备 精准诊疗</h2>
+        <p class="section-subtitle">投资8000余万元，配备国际先进医疗设备</p>
+      </div>
+      <div class="equipment-grid">
+        <div class="equipment-card"><div class="equipment-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div><h3>手术机器人</h3><p>精准辅助手术</p></div>
+        <div class="equipment-card"><div class="equipment-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 17H7v-5h2v5zm4 0h-2v-3h2v3zm0-5h-2v-2h2v2zm4 5h-2V7h2v10z"/></svg></div><h3>核磁共振 (MRI)</h3><p>高分辨率成像</p></div>
+        <div class="equipment-card"><div class="equipment-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V5h14v14H5z"/><circle cx="12" cy="12" r="4"/></svg></div><h3>CT</h3><p>断层扫描诊断</p></div>
+        <div class="equipment-card"><div class="equipment-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg></div><h3>1000+台套设备</h3><p>全方位支持</p></div>
+      </div>
+      <div class="equipment-cta"><p>业务用房 <strong>6678㎡</strong> · 建筑面积 <strong>17826㎡</strong> · 设备投资 <strong>8000余万元</strong></p></div>
+    </div>
+  </section>
 
-  <script>window.addEventListener('scroll',function(){var n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>10)});var yu=document.getElementById('yuAvatar'),yuImg=document.createElement('img');yuImg.src='expert-yu.jpg';yuImg.alt='余晓辉';yuImg.onerror=function(){yu.textContent='余'};yu.parentElement.replaceChild(yuImg,yu);yuImg.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:50%';</script>
+  <section class="section public-welfare" id="welfare">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">❤️ 公益足迹</div>
+        <h2 class="section-title">十年公益 爱的传递</h2>
+        <p class="section-subtitle">用行动诠释责任，以爱心守护健康</p>
+      </div>
+      <div class="welfare-stats">
+        <div class="welfare-stat"><div class="welfare-stat-number">200+万</div><div class="welfare-stat-label">公益投入（元）</div></div>
+        <div class="welfare-stat"><div class="welfare-stat-number">100+</div><div class="welfare-stat-label">走访乡镇</div></div>
+        <div class="welfare-stat"><div class="welfare-stat-number">20万+</div><div class="welfare-stat-label">行程（公里）</div></div>
+        <div class="welfare-stat"><div class="welfare-stat-number">500+</div><div class="welfare-stat-label">矫治手术（例）</div></div>
+      </div>
+      <div class="welfare-content">
+        <div class="welfare-item">
+          <h3><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 十年公益投入</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 健康扶贫、疫情防控</li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 义诊送医送药</li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 勤工俭学岗位</li>
+          </ul>
+        </div>
+        <div class="welfare-item">
+          <h3><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 爱的足迹</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 走访100余个乡镇</li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 90余所中小学校</li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 筛查登记6000余人</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="honor">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">🏆 资质荣誉</div>
+        <h2 class="section-title">资质齐全 荣誉加身</h2>
+        <p class="section-subtitle">政府认可，社会信赖</p>
+      </div>
+      <div class="honor-grid">
+        <div class="honor-card"><div class="honor-icon"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div><h3>黔江区青年文明号</h3></div>
+        <div class="honor-card"><div class="honor-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>扶残助残爱心单位</h3></div>
+        <div class="honor-card"><div class="honor-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>A级纳税企业</h3></div>
+        <div class="honor-card"><div class="honor-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>国家民族团结进步示范单位</h3></div>
+      </div>
+      <div class="insurance-grid">
+        <div class="insurance-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><p>商业保险</p></div></div></div></section>
+
+  <section class="section" id="culture"><div class="container"><div class="section-header"><div class="section-badge">🎯 医院文化</div><h2 class="section-title">责任、厚德、精业</h2><p class="section-subtitle">以病人为中心，以质量求生存</p></div><div class="culture-grid"><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>院训</h3><p>责任 · 厚德 · 精业</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>使命愿景</h3><p>创骨科典范，友一方百姓<br>建成受尊重的区域性骨科医院领导品牌</p></div></div><div class="values-grid"><div class="value-item"><h4>客户第一</h4><p>客户第一、员工第二、股东第三</p></div><div class="value-item"><h4>团队合作</h4><p>彼此尊重、共担共享</p></div><div class="value-item"><h4>诚实守信</h4><p>言行坦荡、正念利他</p></div><div class="value-item"><h4>积极向上</h4><p>乐观进取、充满正能量</p></div></div></div></section>
+
+  <section class="section song-section"><div class="container"><div class="section-header"><div class="section-badge">🎵 院歌</div><h2 class="section-title">生命之光</h2></div><div class="song-content"><div class="song-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><p>院歌音频/视频（待上传）</p></div></div></section>
+
+  <section class="section contact-section" id="contact"><div class="container"><div class="section-header"><div class="section-badge">📞 联系我们</div><h2 class="section-title">便捷就医 贴心服务</h2></div><div class="contact-grid"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h3>咨询电话</h3><p>023-81580502</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><h3>医院地址</h3><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 13S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><div><h3>服务时间</h3><p>24小时全天候服务</p></div></div></div><div class="contact-map"><div class="map-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>地图位置（待添加）</span></div><div class="map-info"><h3>黔江创友骨科医院</h3><p>地址：重庆市黔江区舟白街道武陵大道北段98号</p></div></div></div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="logo" onerror="this.style.display=none"><p>黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年。</p></div><div class="footer-links"><h4>快速导航</h4><a href="#intro">医院概况</a><a href="#tech">核心技术</a><a href="#experts">专家团队</a><a href="#equipment">设备实力</a></div><div class="footer-links"><h4>更多内容</h4><a href="#welfare">公益足迹</a><a href="#honor">资质荣誉</a><a href="#culture">医院文化</a><a href="#contact">联系我们</a></div><div class="footer-contact"><h4>联系方式</h4><p>📞 023-81580502</p><p>📍 重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="footer-bottom"><p>© 2024 黔江创友骨科医院 版权所有</p><p>技术支持：<a href="https://github.com/gww831017/cygk">GitHub Pages</a></p></div></div></footer>
+
+  <div class="back-to-top" id="backToTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></div>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 返回顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>>120急救网络</p></div>
+        <div class="insurance-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><p>商业保险</p></div></div></div></section>
+
+  <section class="section" id="culture"><div class="container"><div class="section-header"><div class="section-badge">🎯 医院文化</div><h2 class="section-title">责任、厚德、精业</h2><p class="section-subtitle">以病人为中心，以质量求生存</p></div><div class="culture-grid"><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>院训</h3><p>责任 · 厚德 · 精业</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>使命愿景</h3><p>创骨科典范，友一方百姓<br>建成受尊重的区域性骨科医院领导品牌</p></div></div><div class="values-grid"><div class="value-item"><h4>客户第一</h4><p>客户第一、员工第二、股东第三</p></div><div class="value-item"><h4>团队合作</h4><p>彼此尊重、共担共享</p></div><div class="value-item"><h4>诚实守信</h4><p>言行坦荡、正念利他</p></div><div class="value-item"><h4>积极向上</h4><p>乐观进取、充满正能量</p></div></div></div></section>
+
+  <section class="section song-section"><div class="container"><div class="section-header"><div class="section-badge">🎵 院歌</div><h2 class="section-title">生命之光</h2></div><div class="song-content"><div class="song-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><p>院歌音频/视频（待上传）</p></div></div></section>
+
+  <section class="section contact-section" id="contact"><div class="container"><div class="section-header"><div class="section-badge">📞 联系我们</div><h2 class="section-title">便捷就医 贴心服务</h2></div><div class="contact-grid"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h3>咨询电话</h3><p>023-81580502</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><h3>医院地址</h3><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 13S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><div><h3>服务时间</h3><p>24小时全天候服务</p></div></div></div><div class="contact-map"><div class="map-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>地图位置（待添加）</span></div><div class="map-info"><h3>黔江创友骨科医院</h3><p>地址：重庆市黔江区舟白街道武陵大道北段98号</p></div></div></div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="logo" onerror="this.style.display=none"><p>黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年。</p></div><div class="footer-links"><h4>快速导航</h4><a href="#intro">医院概况</a><a href="#tech">核心技术</a><a href="#experts">专家团队</a><a href="#equipment">设备实力</a></div><div class="footer-links"><h4>更多内容</h4><a href="#welfare">公益足迹</a><a href="#honor">资质荣誉</a><a href="#culture">医院文化</a><a href="#contact">联系我们</a></div><div class="footer-contact"><h4>联系方式</h4><p>📞 023-81580502</p><p>📍 重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="footer-bottom"><p>© 2024 黔江创友骨科医院 版权所有</p><p>技术支持：<a href="https://github.com/gww831017/cygk">GitHub Pages</a></p></div></div></footer>
+
+  <div class="back-to-top" id="backToTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></div>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 返回顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>>城乡居民医保</p></div>
+        <div class="insurance-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><p>商业保险</p></div></div></div></section>
+
+  <section class="section" id="culture"><div class="container"><div class="section-header"><div class="section-badge">🎯 医院文化</div><h2 class="section-title">责任、厚德、精业</h2><p class="section-subtitle">以病人为中心，以质量求生存</p></div><div class="culture-grid"><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>院训</h3><p>责任 · 厚德 · 精业</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>使命愿景</h3><p>创骨科典范，友一方百姓<br>建成受尊重的区域性骨科医院领导品牌</p></div></div><div class="values-grid"><div class="value-item"><h4>客户第一</h4><p>客户第一、员工第二、股东第三</p></div><div class="value-item"><h4>团队合作</h4><p>彼此尊重、共担共享</p></div><div class="value-item"><h4>诚实守信</h4><p>言行坦荡、正念利他</p></div><div class="value-item"><h4>积极向上</h4><p>乐观进取、充满正能量</p></div></div></div></section>
+
+  <section class="section song-section"><div class="container"><div class="section-header"><div class="section-badge">🎵 院歌</div><h2 class="section-title">生命之光</h2></div><div class="song-content"><div class="song-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><p>院歌音频/视频（待上传）</p></div></div></section>
+
+  <section class="section contact-section" id="contact"><div class="container"><div class="section-header"><div class="section-badge">📞 联系我们</div><h2 class="section-title">便捷就医 贴心服务</h2></div><div class="contact-grid"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h3>咨询电话</h3><p>023-81580502</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><h3>医院地址</h3><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 13S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><div><h3>服务时间</h3><p>24小时全天候服务</p></div></div></div><div class="contact-map"><div class="map-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>地图位置（待添加）</span></div><div class="map-info"><h3>黔江创友骨科医院</h3><p>地址：重庆市黔江区舟白街道武陵大道北段98号</p></div></div></div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="logo" onerror="this.style.display=none"><p>黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年。</p></div><div class="footer-links"><h4>快速导航</h4><a href="#intro">医院概况</a><a href="#tech">核心技术</a><a href="#experts">专家团队</a><a href="#equipment">设备实力</a></div><div class="footer-links"><h4>更多内容</h4><a href="#welfare">公益足迹</a><a href="#honor">资质荣誉</a><a href="#culture">医院文化</a><a href="#contact">联系我们</a></div><div class="footer-contact"><h4>联系方式</h4><p>📞 023-81580502</p><p>📍 重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="footer-bottom"><p>© 2024 黔江创友骨科医院 版权所有</p><p>技术支持：<a href="https://github.com/gww831017/cygk">GitHub Pages</a></p></div></div></footer>
+
+  <div class="back-to-top" id="backToTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></div>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 返回顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>>城镇职工医保</p></div>
+        <div class="insurance-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><p>商业保险</p></div></div></div></section>
+
+  <section class="section" id="culture"><div class="container"><div class="section-header"><div class="section-badge">🎯 医院文化</div><h2 class="section-title">责任、厚德、精业</h2><p class="section-subtitle">以病人为中心，以质量求生存</p></div><div class="culture-grid"><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>院训</h3><p>责任 · 厚德 · 精业</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>使命愿景</h3><p>创骨科典范，友一方百姓<br>建成受尊重的区域性骨科医院领导品牌</p></div></div><div class="values-grid"><div class="value-item"><h4>客户第一</h4><p>客户第一、员工第二、股东第三</p></div><div class="value-item"><h4>团队合作</h4><p>彼此尊重、共担共享</p></div><div class="value-item"><h4>诚实守信</h4><p>言行坦荡、正念利他</p></div><div class="value-item"><h4>积极向上</h4><p>乐观进取、充满正能量</p></div></div></div></section>
+
+  <section class="section song-section"><div class="container"><div class="section-header"><div class="section-badge">🎵 院歌</div><h2 class="section-title">生命之光</h2></div><div class="song-content"><div class="song-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><p>院歌音频/视频（待上传）</p></div></div></section>
+
+  <section class="section contact-section" id="contact"><div class="container"><div class="section-header"><div class="section-badge">📞 联系我们</div><h2 class="section-title">便捷就医 贴心服务</h2></div><div class="contact-grid"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h3>咨询电话</h3><p>023-81580502</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><h3>医院地址</h3><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 13S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><div><h3>服务时间</h3><p>24小时全天候服务</p></div></div></div><div class="contact-map"><div class="map-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>地图位置（待添加）</span></div><div class="map-info"><h3>黔江创友骨科医院</h3><p>地址：重庆市黔江区舟白街道武陵大道北段98号</p></div></div></div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="logo" onerror="this.style.display=none"><p>黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年。</p></div><div class="footer-links"><h4>快速导航</h4><a href="#intro">医院概况</a><a href="#tech">核心技术</a><a href="#experts">专家团队</a><a href="#equipment">设备实力</a></div><div class="footer-links"><h4>更多内容</h4><a href="#welfare">公益足迹</a><a href="#honor">资质荣誉</a><a href="#culture">医院文化</a><a href="#contact">联系我们</a></div><div class="footer-contact"><h4>联系方式</h4><p>📞 023-81580502</p><p>📍 重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="footer-bottom"><p>© 2024 黔江创友骨科医院 版权所有</p><p>技术支持：<a href="https://github.com/gww831017/cygk">GitHub Pages</a></p></div></div></footer>
+
+  <div class="back-to-top" id="backToTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></div>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 返回顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>>工伤保险定点</p></div>
+        <div class="insurance-item"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg><p>商业保险</p></div></div></div></section>
+
+  <section class="section" id="culture"><div class="container"><div class="section-header"><div class="section-badge">🎯 医院文化</div><h2 class="section-title">责任、厚德、精业</h2><p class="section-subtitle">以病人为中心，以质量求生存</p></div><div class="culture-grid"><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>院训</h3><p>责任 · 厚德 · 精业</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>办院宗旨</h3><p>聚专业人才，做骨科典范、塑仁爱之心，解百姓疾患</p></div><div class="culture-card"><div class="culture-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><h3>使命愿景</h3><p>创骨科典范，友一方百姓<br>建成受尊重的区域性骨科医院领导品牌</p></div></div><div class="values-grid"><div class="value-item"><h4>客户第一</h4><p>客户第一、员工第二、股东第三</p></div><div class="value-item"><h4>团队合作</h4><p>彼此尊重、共担共享</p></div><div class="value-item"><h4>诚实守信</h4><p>言行坦荡、正念利他</p></div><div class="value-item"><h4>积极向上</h4><p>乐观进取、充满正能量</p></div></div></div></section>
+
+  <section class="section song-section"><div class="container"><div class="section-header"><div class="section-badge">🎵 院歌</div><h2 class="section-title">生命之光</h2></div><div class="song-content"><div class="song-placeholder"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><p>院歌音频/视频（待上传）</p></div></div></section>
+
+  <section class="section contact-section" id="contact"><div class="container"><div class="section-header"><div class="section-badge">📞 联系我们</div><h2 class="section-title">便捷就医 贴心服务</h2></div><div class="contact-grid"><div class="contact-info"><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h3>咨询电话</h3><p>023-81580502</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><h3>医院地址</h3><p>重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 13S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><div><h3>服务时间</h3><p>24小时全天候服务</p></div></div></div><div class="contact-map"><div class="map-placeholder"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>地图位置（待添加）</span></div><div class="map-info"><h3>黔江创友骨科医院</h3><p>地址：重庆市黔江区舟白街道武陵大道北段98号</p></div></div></div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="logo" onerror="this.style.display=none"><p>黔江创友骨科医院，渝东南首家国家二级骨科专科医院，专注骨科十五年。</p></div><div class="footer-links"><h4>快速导航</h4><a href="#intro">医院概况</a><a href="#tech">核心技术</a><a href="#experts">专家团队</a><a href="#equipment">设备实力</a></div><div class="footer-links"><h4>更多内容</h4><a href="#welfare">公益足迹</a><a href="#honor">资质荣誉</a><a href="#culture">医院文化</a><a href="#contact">联系我们</a></div><div class="footer-contact"><h4>联系方式</h4><p>📞 023-81580502</p><p>📍 重庆市黔江区舟白街道武陵大道北段98号</p></div></div><div class="footer-bottom"><p>© 2024 黔江创友骨科医院 版权所有</p><p>技术支持：<a href="https://github.com/gww831017/cygk">GitHub Pages</a></p></div></div></footer>
+
+  <div class="back-to-top" id="backToTop"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></div>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 返回顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
