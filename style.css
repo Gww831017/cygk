@@ -38,15 +38,16 @@ img { max-width: 100%; height: auto; }
 /* 导航栏 */
 .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
 .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-.nav-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.navbar .container { display: flex; align-items: center; justify-content: center; height: 70px; }
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); }
 .nav-logo-text { display: flex; flex-direction: column; gap: 0.1rem; }
 .nav-logo img { height: 45px; width: auto; }
 .nav-logo-name { font-size: 1rem; font-weight: 700; color: var(--primary); line-height: 1.2; display: block; }
 .nav-logo-en { font-size: 0.6rem; color: var(--text-light); letter-spacing: 0.03em; display: block; margin-top: 0.1rem; }
-.nav-links { display: flex; align-items: center; gap: 0.15rem; flex-shrink: 0; }
-.nav-link { padding: 0.35rem 0.55rem; font-size: 0.82rem; color: var(--text-secondary); border-radius: var(--radius-sm); transition: var(--transition); white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 0; flex-shrink: 0; padding: 0 8rem; }
+.nav-link { padding: 0.35rem 0.6rem; font-size: 0.82rem; color: var(--text-secondary); border-radius: var(--radius-sm); transition: var(--transition); white-space: nowrap; }
 .nav-link:hover, .nav-link.active { color: var(--primary); background: var(--bg-light); }
-.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); }
 .nav-phone { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--primary); color: var(--text-white); border-radius: var(--radius); font-weight: 600; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(8,145,178,0.3); white-space: nowrap; }
 .nav-phone:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(8,145,178,0.4); }
 
@@ -242,12 +243,12 @@ img { max-width: 100%; height: auto; }
 
 /* 响应式 */
 @media (max-width: 1024px) {
-  .navbar .container { height: auto; padding: 0.75rem 1rem; flex-wrap: nowrap; overflow: hidden; }
-  .nav-logo { flex-shrink: 0; }
-  .nav-links { overflow-x: auto; gap: 0.1rem; scrollbar-width: none; -ms-overflow-style: none; }
+  .navbar .container { height: auto; padding: 0.75rem 1rem; justify-content: center; flex-wrap: wrap; gap: 0; }
+  .nav-logo { position: static; transform: none; }
+  .nav-links { padding: 0; gap: 0; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; justify-content: flex-start; width: auto; flex: 1; }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-link { padding: 0.3rem 0.5rem; font-size: 0.78rem; flex-shrink: 0; }
-  .nav-right { flex-shrink: 0; }
+  .nav-right { position: static; transform: none; flex-shrink: 0; }
   .nav-phone { font-size: 0.8rem; padding: 0.4rem 0.75rem; }
   .hero-title { font-size: 2.5rem; }
   .intro-grid, .welfare-content, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
